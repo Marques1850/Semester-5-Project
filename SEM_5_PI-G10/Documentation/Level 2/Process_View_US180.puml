@@ -1,0 +1,13 @@
+boundary x 
+participant API
+participant System
+
+x -> API: 1. GET-> /api/building/listBuildingsWithFloorRange
+activate API
+API -> System: 2. handles the request
+activate System
+System -> API: 4. response status and json
+deactivate System
+
+API --> x: 2. response status and json
+deactivate API

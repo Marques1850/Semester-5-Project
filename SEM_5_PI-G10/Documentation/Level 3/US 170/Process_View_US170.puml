@@ -1,0 +1,52 @@
+boundary x 
+participant buildingRoute
+participant buildingController <<Controller>>
+participant buildingService <<Service>>
+participant buildingMap <<Mapper>>
+participant buildingDTO <<DTO>>
+participant building <<Entity>>
+participant buildingRepository <<Repository>>
+participant floorRepository <<Repository>>
+database driverDB
+
+
+x -> buildingRoute: 1. GET /api/building/buildingsList (json)
+activate buildingRoute
+buildingRoute -> buildingController: 2. Handles the request, call buildingController.listAllbuildings(req, res, next)
+activate buildingController
+buildingController -> buildingService: 3. listAllBuildings
+activate buildingService
+buildingService -> buildingRepository: 4. findAll()
+activate buildingRepository
+buildingRepository -> driverDB: 5. find()
+activate driverDB
+deactivate driverDB
+buildingRepository --> buildingService: 5. return buildings
+deactivate buildingRepository
+loop for each building
+buildingService -> buildingMap: 6. toDTO(building)
+activate buildingMap
+buildingMap --> building: 7. codigo()
+activate building
+deactivate building
+buildingMap --> building: 8. name()
+activate building
+deactivate building
+buildingMap --> building: 9. description()
+activate building
+deactivate building
+buildingMap --> building: 10. width()
+activate building
+deactivate building
+buildingMap --> building: 11. length()
+activate building
+deactivate building
+buildingMap --> buildingService: 12. return buildingDTO
+deactivate buildingMap
+end loop
+buildingService --> buildingController: 13. return buildingDTO[]
+deactivate buildingService
+buildingController --> buildingRoute: 14. return response status and json
+deactivate buildingController
+buildingRoute --> x: 2. response status and json
+deactivate buildingRoute

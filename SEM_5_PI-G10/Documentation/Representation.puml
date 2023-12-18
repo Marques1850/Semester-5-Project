@@ -1,0 +1,290 @@
+
+package infraestructure {
+    package persistence{
+        package IRolePersistence{
+
+        }
+        package IUserPersistence{
+
+        }
+        package IRobotPersistence{
+
+        }
+        package IBuildingPersistence{
+
+        }
+        package ITaskPersistence{
+
+        }
+    }
+
+    package routes{
+        package roleRoute{
+
+        }
+        package userRoute{
+
+        }
+        package robotRoute{
+
+        }
+        package buildingRoute{
+
+        }
+    }
+
+
+}
+
+package InterfaceAdapters {
+    package implController{
+        package RoleControllerImpl{
+
+        }
+        package UserControllerImpl{
+
+        }
+        package RobotControllerImpl{
+
+        }
+        package BuildingControllerImpl{
+
+        }
+        package TaskControllerImpl{
+
+        }
+    }
+    package controllers{
+        package IRoleController{
+
+        }
+        package IUserController{
+
+        }
+        package IRobotController{
+
+        }
+        package IBuildingController{
+
+        }
+        package ITaskController{
+
+        }
+    }
+
+    package repos{
+        package RoleRepo{
+
+        }
+        package UserRepo{
+
+        }
+        package RobotRepo{
+
+        }
+        package BuildingRepo{
+
+        }
+
+        package TaskRepo{
+
+        }
+
+    }
+
+}
+
+
+
+package ApplicationServices/UseCaseServices{
+    package AppServices{
+        package IAppServices{
+            package IRoleService{
+
+            }
+            package IUserService{
+
+            }
+            package IRobotService{
+
+            }
+            package IBuildingService{
+
+            }
+            package ITaskService{
+
+            }
+        }
+        package ImplIAppServices{
+            package ImplRoleService{
+
+            }
+            package ImplUserService{
+
+            }
+            package ImplRobotService{
+
+            }
+            package ImplBuildingService{
+
+            }
+            package ImplTaskService{
+
+            }
+        }
+        
+
+    }
+
+    package IRepos{
+        package IRoleRepo{
+
+        }
+        package IUserRepo{
+
+        }
+        package IRobotRepo{
+
+        }
+        package IBuildingRepo{
+
+        }
+        package ITaskRepo{
+
+        }
+        
+    }
+    
+
+}
+package Entities/Core/Domain{
+            package Services{
+            package RoleService{
+                class RoleService{
+                }
+            }
+            package UserService{
+                class UserService{
+                }
+            }
+            package RobotService{
+                class RobotService{
+                }
+            }
+            package BuildingService{
+                class BuildingService{
+                }
+            }
+            package TaskService{
+                class TaskService{
+                }
+            }
+
+        }
+        package Aggregates{
+            package AggregateBuilding{
+                class Building <<Root>>{
+                }
+                class Floor <<Entity>>{
+                }
+                class Elevator <<Entity>>{
+                }
+                class Corridor <<Entity>>{
+                }
+                class Room <<Entity>>{
+                }
+
+            }
+            package AggregateRobot{
+                class Robot <<Root>>{
+                }
+                class Tipo <<Entity>>{
+                }
+
+            }
+            package User{
+                class User <<Root>>{
+                }
+        }
+
+            package Task{
+                class Task <<Root>>{
+                }
+                class TaskType <<Entity>>{
+                }
+                class Transporte <<Entity>>{
+                }
+                class Vigilancy <<Entity>>{
+                }
+            }
+            package ValueObjects{
+                class Estado <<ValueObject>>{
+                }
+                class Role <<ValueObject>>{
+                }
+            }
+            
+
+    }
+}
+
+infraestructure--[hidden]>InterfaceAdapters
+InterfaceAdapters--[hidden]>"ApplicationServices/UseCaseServices"
+"ApplicationServices/UseCaseServices"--[hidden]>"Entities/Core/Domain"
+Building-->"*" Floor
+Floor -->"*" Corridor
+Floor -->"*" Room
+Floor ->"*" Elevator
+Robot -->"1" Tipo
+Robot -->"1" Estado
+Task -->"1" TaskType
+Task -->"1" Transporte
+Task -->"1" Vigilancy
+User -->"1" Role
+RoleService .left.> Role
+UserService .left.> User
+RobotService .left.> Robot
+BuildingService .left.> Building
+TaskService .left.> Task
+ImplBuildingService..>Building
+ImplUserService..>User
+ImplRobotService..>Robot
+ImplRoleService..>Role
+ImplTaskService..>Task
+ImplBuildingService.>IBuildingRepo
+ImplUserService.>IUserRepo
+ImplRobotService.>IRobotRepo
+ImplRoleService.>IRoleRepo
+ImplTaskService.>ITaskRepo
+ImplBuildingService..|> IBuildingService
+ImplUserService..|> IUserService
+ImplRobotService..|> IRobotService
+ImplRoleService..|> IRoleService
+ImplTaskService..|> ITaskService
+TaskRepo ..|> ITaskRepo
+BuildingRepo ..|> IBuildingRepo
+UserRepo ..|> IUserRepo
+RobotRepo ..|> IRobotRepo
+RoleRepo ..|> IRoleRepo
+RoleRepo ..> IRolePersistence
+UserRepo ..> IUserPersistence
+RobotRepo ..> IRobotPersistence
+BuildingRepo ..> IBuildingPersistence
+TaskRepo ..> ITaskPersistence
+buildingRoute ..> IBuildingController
+robotRoute ..> IRobotController
+roleRoute ..> IRoleController
+userRoute ..> IUserController
+TaskControllerImpl ..|> ITaskController
+BuildingControllerImpl ..|> IBuildingController
+RobotControllerImpl ..|> IRobotController
+RoleControllerImpl ..|> IRoleController
+UserControllerImpl ..|> IUserController
+UserControllerImpl ..> IUserService
+RoleControllerImpl ..> IRoleService
+RobotControllerImpl ..> IRobotService
+BuildingControllerImpl ..> IBuildingService
+TaskControllerImpl ..> ITaskService
+
+
+

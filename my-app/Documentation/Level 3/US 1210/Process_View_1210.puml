@@ -1,0 +1,53 @@
+boundary x 
+participant HTML
+participant Component 
+participant Service 
+participant MGF 
+
+
+x -> HTML: option to create a room
+activate HTML
+HTML -> Component: triggers function to get all buildings
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGF: GET /api/building/buildingsList
+activate MGF
+MGF --> Service: response status and json
+deactivate MGF
+Service --> Component: returns the buildings list
+deactivate Service
+Component --> HTML: returns the buildings codes
+deactivate Component
+HTML --> x: displays the buildings codes
+x-> HTML: choose a building
+HTML -> Component: triggers function to get all chosen building floors
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGF: GET /api/building/getBuildingFloors
+activate MGF
+MGF --> Service: response status and json
+deactivate MGF
+Service --> Component: returns the floors list
+deactivate Service
+Component --> HTML: returns the floors codes
+deactivate Component
+HTML --> x: displays the floors codes
+x-> HTML: choose a floor and choose room: name, description and type
+HTML -> Component: triggers function to get create a room
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGF: POST /api/room/createRoom
+activate MGF
+MGF --> Service: response status and json
+deactivate MGF
+Service --> Component: returns the room created
+deactivate Service
+Component --> HTML: returns the room created
+deactivate Component
+HTML --> x: displays the room created
+
+
+deactivate HTML

@@ -1,0 +1,49 @@
+boundary x 
+participant Route
+participant Controller 
+participant Service 
+participant Mapper 
+participant DTO 
+participant elevator 
+participant buildingRepository
+participant floorRepository
+participant elevatorRepository 
+database driverDB
+
+
+x -> Route: POST /api/elevator/createElevator 
+activate Route
+Route -> Controller: handles the request, call Controller.createElevator
+activate Controller
+Controller -> Service: send request to service
+
+activate Service
+Service -> elevator: create
+activate elevator
+elevator --> Service: return elevator
+deactivate elevator
+
+Service -> elevatorRepository: save elevator
+activate elevatorRepository
+elevatorRepository -> driverDB: 7. save
+activate driverDB
+deactivate driverDB
+elevatorRepository --> Service: 8. return elevator
+deactivate elevatorRepository
+
+Service -> Mapper: convert data
+activate Mapper
+Mapper --> elevator: uses data
+activate elevator
+deactivate elevator
+
+Mapper --> Service: return converted data
+deactivate Mapper
+
+Service --> Controller: return converted data
+deactivate Service
+
+Controller --> Route: response status and json
+deactivate Controller
+Route --> x: 19. response status and json
+deactivate Route

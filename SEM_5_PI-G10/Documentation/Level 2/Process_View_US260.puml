@@ -1,0 +1,12 @@
+boundary x 
+participant API
+participant System
+
+x -> API: 1. GET-> /api/passage/getPassagesBuildings 
+activate API 
+API -> System: 2. Handles the request
+activate System
+System -> API: 4. Returns response status and json
+deactivate System
+API --> x: 2. response status and json
+deactivate API

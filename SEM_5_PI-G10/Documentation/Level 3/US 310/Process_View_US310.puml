@@ -1,0 +1,55 @@
+boundary x 
+participant roomRoute
+participant roomController <<Controller>>
+participant roomService <<Service>>
+participant roomMap <<Mapper>>
+participant room <<Entity>>
+participant floorRepository <<Repository>>
+database driverDB
+
+
+x -> roomRoute: POST /api/room/createRoom
+
+activate roomRoute
+roomRoute -> roomController: handles the request, calls controller
+activate roomController
+roomController -> roomService: send request to service
+activate roomService
+
+roomService -> floorRepository: check if floor exists
+activate floorRepository
+floorRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+floorRepository --> roomService: response
+deactivate floorRepository
+
+roomService -> room: create
+activate room
+room --> roomService: return room
+deactivate room
+
+roomService -> floorRepository: save
+activate floorRepository
+floorRepository -> driverDB: save
+activate driverDB
+deactivate driverDB
+floorRepository --> roomService: return room
+deactivate floorRepository
+
+roomService -> roomMap: convert data
+activate roomMap
+roomMap --> room: uses data
+activate room
+deactivate room
+
+roomMap --> roomService: return converted data
+deactivate roomMap
+
+roomService --> roomController: return converted data
+deactivate roomService
+
+roomController --> roomRoute: return response status and json
+deactivate roomController
+roomRoute --> x: 2. response status and json
+deactivate roomRoute

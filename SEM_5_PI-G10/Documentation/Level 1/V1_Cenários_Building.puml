@@ -1,0 +1,14 @@
+@startuml
+title Building Use Case Diagram
+
+actor SystemAdmin as A
+usecase (CreateBuilding) as CB
+usecase (UpdateBuilding) as UB
+usecase (ListBuilding) as LB
+usecase (List Buildings Within A range Of Floors) as LBRF
+A --> CB
+A --> UB
+A --> LB
+A -->LBRF
+
+@enduml

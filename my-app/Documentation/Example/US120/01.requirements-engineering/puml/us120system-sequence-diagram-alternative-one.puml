@@ -1,0 +1,36 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US120
+
+autonumber
+
+actor "Utilizador" as User
+participant ":Sistema" as System
+
+activate User
+
+    User -> System : Inicia o Processo de Cancelamento de Conta
+    activate System
+
+        System --> User : Confirmação da Opção de Cancelamento
+    deactivate System
+
+    User -> System : Confirmação de Cancelamento
+    activate System
+
+        System --> User : Informação sobre o Apagamento de Dados
+    deactivate System
+
+        User -> System : Confirmação de Entendimento
+        activate System
+
+            System --> User : Processo de Apagamento Iniciado
+        deactivate System
+
+    User -> System : Encerramento da Sessão e Redirecionamento
+    activate System
+
+        System --> User : Sessão Encerrada, Redirecionamento Concluído
+    deactivate System

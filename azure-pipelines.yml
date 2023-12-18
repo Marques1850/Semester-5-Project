@@ -1,0 +1,45 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@1
+  inputs:
+    version: '18.18.0'
+  displayName: 'Install Node.js'
+
+- script: |
+    ls -l
+    cd ./SEM_5_PI-G10
+    npm install
+  displayName: 'npm install'
+
+- script: |
+    cd ./SEM_5_PI-G10
+    npm run build
+  displayName: 'npm build'
+
+- task: CopyFiles@2
+  inputs:
+    sourceFolder: '$(Build.SourcesDirectory)'
+    contents: |
+       src/*
+       public/*
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
+  displayName: 'Copy project files'
+
+- task: PublishPipelineArtifact@1
+  inputs:
+    artifactName: e2e-server
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    publishLocation: 'pipeline'
+  displayName: 'Publish npm artifact'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure for Students(a533ad72-b731-488c-93a3-e12229e9c8f4)'
+    appType: 'webAppLinux'
+    WebAppName: 'robotdroneGO'
+    packageForLinux: './SEM_5_PI-G10/build'

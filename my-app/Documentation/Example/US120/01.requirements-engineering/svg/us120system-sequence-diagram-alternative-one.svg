@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="466px" preserveAspectRatio="none" style="width:401px;height:466px;background:#FFFFFF;" version="1.1" viewBox="0 0 401 466" width="401px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="27.6094" id="_title" style="stroke:none;stroke-width:1.0;" width="294" x="52.75" y="10"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="284" x="57.75" y="29.5332">System Sequence Diagram (SSD) - US120</text><rect fill="#FFFFFF" height="243.8125" style="stroke:#181818;stroke-width:1.0;" width="10" x="31.5" y="131.2188"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="356.5" y="153.5703"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="356.5" y="214.2734"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="356.5" y="274.9766"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="356.5" y="335.6797"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="36" x2="36" y1="121.2188" y2="384.0313"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="361.5" x2="361.5" y1="121.2188" y2="384.0313"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="5" y="118.1426">Utilizador</text><ellipse cx="36.5" cy="52.1094" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M36.5,60.1094 L36.5,87.1094 M23.5,68.1094 L49.5,68.1094 M36.5,87.1094 L23.5,102.1094 M36.5,87.1094 L49.5,102.1094 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="5" y="397.5645">Utilizador</text><ellipse cx="36.5" cy="409.1406" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M36.5,417.1406 L36.5,444.1406 M23.5,425.1406 L49.5,425.1406 M36.5,444.1406 L23.5,459.1406 M36.5,444.1406 L49.5,459.1406 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="68" x="327.5" y="88.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="334.5" y="110.1426">:Sistema</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="68" x="327.5" y="383.0313"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="334.5" y="404.5645">:Sistema</text><rect fill="#FFFFFF" height="243.8125" style="stroke:#181818;stroke-width:1.0;" width="10" x="31.5" y="131.2188"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="356.5" y="153.5703"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="356.5" y="214.2734"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="356.5" y="274.9766"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="356.5" y="335.6797"/><polygon fill="#181818" points="344.5,149.5703,354.5,153.5703,344.5,157.5703,348.5,153.5703" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="41.5" x2="350.5" y1="153.5703" y2="153.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="48.5" y="148.7139">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="261" x="59.5" y="148.7139">Inicia o Processo de Cancelamento de Conta</text><polygon fill="#181818" points="52.5,179.9219,42.5,183.9219,52.5,187.9219,48.5,183.9219" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="46.5" x2="360.5" y1="183.9219" y2="183.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="58.5" y="179.0654">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="237" x="69.5" y="179.0654">Confirmação da Opção de Cancelamento</text><polygon fill="#181818" points="344.5,210.2734,354.5,214.2734,344.5,218.2734,348.5,214.2734" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="41.5" x2="350.5" y1="214.2734" y2="214.2734"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="48.5" y="209.417">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="177" x="59.5" y="209.417">Confirmação de Cancelamento</text><polygon fill="#181818" points="52.5,240.625,42.5,244.625,52.5,248.625,48.5,244.625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="46.5" x2="360.5" y1="244.625" y2="244.625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="58.5" y="239.7686">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="246" x="69.5" y="239.7686">Informação sobre o Apagamento de Dados</text><polygon fill="#181818" points="344.5,270.9766,354.5,274.9766,344.5,278.9766,348.5,274.9766" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="41.5" x2="350.5" y1="274.9766" y2="274.9766"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="48.5" y="270.1201">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="174" x="59.5" y="270.1201">Confirmação de Entendimento</text><polygon fill="#181818" points="52.5,301.3281,42.5,305.3281,52.5,309.3281,48.5,305.3281" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="46.5" x2="360.5" y1="305.3281" y2="305.3281"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="58.5" y="300.4717">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="198" x="69.5" y="300.4717">Processo de Apagamento Iniciado</text><polygon fill="#181818" points="344.5,331.6797,354.5,335.6797,344.5,339.6797,348.5,335.6797" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="41.5" x2="350.5" y1="335.6797" y2="335.6797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="48.5" y="330.8232">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="266" x="59.5" y="330.8232">Encerramento da Sessão e Redirecionamento</text><polygon fill="#181818" points="52.5,362.0313,42.5,366.0313,52.5,370.0313,48.5,366.0313" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="46.5" x2="360.5" y1="366.0313" y2="366.0313"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="58.5" y="361.1748">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="280" x="69.5" y="361.1748">Sessão Encerrada, Redirecionamento Concluído</text><!--MD5=[8bde2cc88ef0757122a8534bb788ba23]
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US120
+
+autonumber
+
+actor "Utilizador" as User
+participant ":Sistema" as System
+
+activate User
+
+    User -> System : Inicia o Processo de Cancelamento de Conta
+    activate System
+
+        System - -> User : Confirmação da Opção de Cancelamento
+    deactivate System
+
+    User -> System : Confirmação de Cancelamento
+    activate System
+
+        System - -> User : Informação sobre o Apagamento de Dados
+    deactivate System
+
+        User -> System : Confirmação de Entendimento
+        activate System
+
+            System - -> User : Processo de Apagamento Iniciado
+        deactivate System
+
+    User -> System : Encerramento da Sessão e Redirecionamento
+    activate System
+
+        System - -> User : Sessão Encerrada, Redirecionamento Concluído
+    deactivate System
+@end
+
+PlantUML version 1.2022.7(Mon Aug 22 18:01:30 BST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

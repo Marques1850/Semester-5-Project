@@ -1,0 +1,8 @@
+actor SystemAdmin
+participant System as Sys
+
+SystemAdmin -> Sys: 1. Requests list of all X
+activate Sys
+
+Sys --> SystemAdmin:
+deactivate Sys

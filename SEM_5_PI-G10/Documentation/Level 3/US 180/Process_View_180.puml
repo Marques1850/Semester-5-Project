@@ -1,0 +1,49 @@
+boundary x 
+participant Route
+participant Controller 
+participant Service 
+participant Mapper 
+participant DTO 
+participant Building 
+participant RepositoryBuildings
+participant RepositoryFloor 
+database mongoDB
+
+
+x -> Route: GET /api/building/listBuildingsWithFloorRange
+activate Route
+Route -> Controller: Handles the request, calls controller
+activate Controller
+Controller -> Service: send request to service
+activate Service
+Service -> RepositoryBuildings: request buildings
+activate RepositoryBuildings
+RepositoryBuildings -> mongoDB: request buildings
+activate mongoDB
+deactivate mongoDB
+RepositoryBuildings --> Service: return list
+deactivate RepositoryBuildings
+
+Service -> RepositoryFloor: requests floors for each building
+activate RepositoryFloor
+RepositoryFloor -> mongoDB: requests floors
+activate mongoDB
+deactivate mongoDB
+RepositoryFloor --> Service: return floors
+deactivate RepositoryFloor
+
+
+Service -> Mapper: convert data
+activate Mapper
+Mapper --> Building: uses data
+activate Building
+deactivate Building
+Mapper --> Service: return list
+deactivate Mapper
+
+Service --> Controller: return list
+deactivate Service
+Controller --> Route: return response status and json
+deactivate Controller
+Route --> x: response status and json
+deactivate Route

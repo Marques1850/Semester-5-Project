@@ -1,0 +1,64 @@
+boundary x 
+participant Route
+participant Controller
+participant Service 
+participant Mapper 
+participant DTO 
+participant floor 
+participant buildingRepository 
+participant floorRepository 
+database driverDB
+
+
+x -> Route: PATCH /api/floor/updateFloor  
+activate Route
+Route -> Controller: handles the request, calls controller
+activate Controller
+Controller -> Service: send request to service
+activate Service
+Service -> buildingRepository: verify if building exists
+activate buildingRepository
+buildingRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+buildingRepository --> Service: return building
+deactivate buildingRepository
+
+Service -> floorRepository: verify floors of building
+activate floorRepository
+floorRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+floorRepository --> Service: returns floors
+deactivate floorRepository
+
+
+Service -> floor: create
+activate floor
+floor --> Service: return floor
+deactivate floor
+
+Service -> floorRepository: update information
+activate floorRepository
+floorRepository -> driverDB: update
+activate driverDB
+deactivate driverDB
+floorRepository --> Service: return floor
+deactivate floorRepository
+
+Service -> Mapper: convert data
+activate Mapper
+Mapper --> floor: uses data
+activate floor
+deactivate floor
+
+Mapper --> Service: return data transfer object
+deactivate Mapper
+
+Service --> Controller: return data transfer object
+deactivate Service
+
+Controller --> Route: return response status and json
+deactivate Controller
+Route --> x: 24. response status and json
+deactivate Route

@@ -1,0 +1,38 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US80
+
+autonumber
+
+actor "Administrador" as Admin
+participant ":System" as System
+
+activate Admin
+
+    Admin -> System : Solicitação de Aprovação/Recusa de Registro
+    activate System
+
+        System --> Admin : Lista de Pedidos de Registro Pendentes
+    deactivate System
+
+    Admin -> System : Escolhe um Pedido de Registro
+    activate System
+
+        System --> Admin : Detalhes do Pedido de Registro
+    deactivate System
+
+    Admin -> System : Decide Aprovar ou Recusar o Pedido
+    activate System
+
+        System --> Admin : Confirmação da Decisão
+    deactivate System
+
+    Admin -> System : Aprovação/Recusa Bem-sucedida
+    activate System
+
+        System --> Admin : Mensagem de Sucesso
+    deactivate System
+
+@enduml

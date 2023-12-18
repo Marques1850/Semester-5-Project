@@ -1,0 +1,59 @@
+boundary x 
+participant passageRoute
+participant passageController <<Controller>>
+participant passageService <<Service>>
+participant passageMap <<Mapper>>
+participant passageDTO <<DTO>>
+participant passage <<Entity>>
+participant buildingRepository <<Repository>>
+participant floorRepository <<Repository>>
+participant passageRepository <<Repository>>
+database driverDB
+
+
+x -> passageRoute: 1. GET /api/passage/getPassagesBuildings    params: codeBuilding1,codeBuilding2(json)
+activate passageRoute
+passageRoute -> passageController: 2. Handles the request, call passageController.getPassagesBuilding
+activate passageController
+passageController -> passageService: 3. getPassagesBuilding(codeBuilding1,codeBuilding2)
+
+activate passageService
+
+passageService -> passageRepository: 16. findByBuildingCodes(codeBuilding1,codeBuilding2)
+activate passageRepository
+passageRepository -> driverDB: 17. find()
+activate driverDB
+deactivate driverDB
+passageRepository --> passageService: 18. return passages
+deactivate passageRepository
+loop for each passage in passages
+passageService -> passageMap: 24. toDTO(passage)
+activate passageMap
+passageMap --> passage: 25. codigo()
+activate passage
+deactivate passage
+passageMap --> passage: 26. codeBuilding1()
+activate passage
+deactivate passage
+passageMap --> passage: 27. codeBuilding2()
+activate passage
+deactivate passage
+passageMap --> passage: 28. FloorBuilding1Name()
+activate passage
+deactivate passage
+passageMap --> passage: 29. FloorBuilding2Name()
+activate passage
+deactivate passage
+passageMap --> passageService: 30.  passageDTO
+deactivate passageMap
+passageService --> passageService: 31. add passageDTO to listPassagesDTO
+end
+
+
+passageService --> passageController: 31. return listPassagesDTO
+deactivate passageService
+
+passageController --> passageRoute: 32. return response status and json
+deactivate passageController
+passageRoute --> x: 2. response status and json
+deactivate passageRoute

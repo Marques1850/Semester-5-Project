@@ -1,0 +1,62 @@
+boundary x 
+participant HTML
+participant Component 
+participant Service 
+participant MGC 
+
+
+x -> HTML: option to  a passage
+activate HTML
+HTML -> Component: triggers function to get passages and buildings
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/passage/getAllPassages
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of passages
+deactivate Service
+Component-> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/building/buildingsList
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of buildings
+deactivate Service
+Component --> HTML: returns list of passage codes and building codes
+deactivate Component
+HTML -> x: displays list of passage codes and building codes
+x -> HTML: selects passage and the 2 buildings for the passage
+HTML -> Component: triggers function to get all floors of building 1 and 2 selected
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/floor/getBuildingFloors
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns lists of floors 
+deactivate Service
+Component --> HTML: returns lists of floors names
+deactivate Component
+HTML -> x: displays lists of floors names
+
+x -> HTML: selects each floor name for the passage
+HTML -> Component: triggers function to  update passage
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: PUT /api/passage/updatePassage
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns the passage updated
+deactivate Service
+Component --> HTML: returns the passage updated
+deactivate Component
+HTML --> x: displays the passage updated
+
+
+deactivate HTML

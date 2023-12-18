@@ -1,0 +1,8 @@
+actor SystemAdmin
+participant System as Sys
+
+SystemAdmin -> Sys: 1. Requests to load a floor plant
+activate Sys
+
+Sys --> SystemAdmin: 2. Delivers succes or failure of request
+deactivate Sys

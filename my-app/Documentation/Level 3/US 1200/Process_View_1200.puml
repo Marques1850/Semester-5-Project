@@ -1,0 +1,24 @@
+boundary x 
+participant HTML
+participant Component 
+participant Service 
+participant MGC 
+
+
+
+x -> HTML: chooses to list buildings floors with passages
+activate HTML
+HTML -> Component: triggers function
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/passage/getFloorsWithPassage
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of floors
+deactivate Service
+Component --> HTML: returns list of floors
+deactivate Component
+HTML --> x: displays list of floors
+deactivate HTML

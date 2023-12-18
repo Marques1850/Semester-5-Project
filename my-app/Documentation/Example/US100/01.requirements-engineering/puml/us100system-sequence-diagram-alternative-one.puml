@@ -1,0 +1,32 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US80
+
+autonumber
+
+actor "User" as Admin
+participant ":System" as System
+
+activate Admin
+
+    Admin -> System : Solicitação da alteração dos dados do próprio user
+    activate System
+
+        System --> Admin : Mostra os dados do user e permite a alteração
+    deactivate System
+
+    Admin -> System : Preenche os campos que pretende alterar e submete o pedido
+    activate System
+
+        System --> Admin : Confirmação da Decisão
+    deactivate System
+
+    Admin -> System : Aprovação/Recusa Bem-sucedida
+    activate System
+
+        System --> Admin : Mensagem de Sucesso
+    deactivate System
+
+@enduml

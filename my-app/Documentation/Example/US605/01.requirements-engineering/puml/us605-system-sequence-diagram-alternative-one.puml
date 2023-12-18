@@ -1,0 +1,36 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US605
+
+autonumber
+
+actor "User" as Admin
+participant ":System" as System
+
+activate Admin
+
+        Admin -> System : Pede para importar um modelo 3D de um robot
+    activate System
+
+        System --> Admin : Mostra a lista de modelos 3D disponíveis
+    deactivate System
+
+        Admin -> System : Escolhe um modelo
+    activate System
+
+        System --> Admin: Mostra a lista de pisos e pede para escolher um
+    deactivate System
+
+    Admin -> System: Escolhe um piso
+    activate System
+        System --> Admin : Pede que introduza a localização do robot no piso
+
+        Admin -> System: Introduz a localização
+    activate System
+        System --> Admin : Mostra mensagem de sucesso
+    deactivate Admin
+
+
+@enduml

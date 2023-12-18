@@ -1,0 +1,42 @@
+boundary x 
+participant Route
+participant Controller 
+participant Service 
+participant Mapper
+participant DTO
+participant floor 
+participant floorRepository 
+database driverDB
+
+
+x -> Route: GET /api/building/getBuildingFloors 
+activate Route
+Route -> Controller: Handles the request, calls controller
+activate Controller
+Controller -> Service: send request to service
+activate Service
+Service -> floorRepository: requests floors of building
+activate floorRepository
+floorRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+floorRepository --> Service: returns floors
+deactivate floorRepository
+
+
+Service -> floorMap: convert data
+activate floorMap
+Mapper--> floor: uses data
+activate floor
+deactivate floor
+
+Mapper--> Service: returns list 
+deactivate floorMap
+
+
+Service --> Controller: returns list 
+deactivate Service
+Controller --> Route: response status and json
+deactivate Controller
+Route --> x: response status and json
+deactivate Route

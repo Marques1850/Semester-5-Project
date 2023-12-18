@@ -1,0 +1,28 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US20
+
+autonumber
+
+actor "Potencial Utente" as User
+participant ":System" as System
+
+activate User
+
+User -> System : Inicia processo de registo como utente
+activate System
+
+System --> User : Solicita informações necessárias para o registo(nome, email, telefone e numero contribuinte )
+
+User -> System : Fornece as informações necessárias
+
+System --> User : Valida as informações fornecidas
+
+System --> User : Conclui o registo com sucesso
+
+deactivate System
+deactivate User
+
+@enduml

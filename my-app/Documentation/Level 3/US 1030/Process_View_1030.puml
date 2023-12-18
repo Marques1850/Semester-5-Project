@@ -1,0 +1,24 @@
+boundary x 
+participant HTML
+participant Component 
+participant Service 
+participant MGC 
+
+
+
+x -> HTML: option to get all robots
+activate HTML
+HTML -> Component: triggers function to get all robots
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/robot/getRobots
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of robots
+deactivate Service
+Component --> HTML: returns list of robots
+deactivate Component
+HTML --> x: displays list of robots
+deactivate HTML

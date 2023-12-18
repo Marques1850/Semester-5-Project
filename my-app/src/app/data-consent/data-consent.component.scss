@@ -1,0 +1,60 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.title {
+  color: #CB2B33;
+  text-align: center;
+  font-size: 25px;
+  font-family: NType82 !important;
+}
+
+.content {
+  font-size: 16px;
+  font-family: inherit;
+}
+
+button {
+  background-color: #042F6A;
+  color: #fff !important;
+  padding: 8px;
+  border-radius: 50px;
+  border: none;
+  width: 60%;
+  font-size: 1.2rem;
+  font-family: NType82 !important;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+
+  &:hover { 
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #000;
+  }
+
+  transition: transform .5s ease, box-shadow .5s ease;
+
+  &:active { 
+    animation-name: rippleEffectAnimation; 
+    animation-duration: .3s; 
+    animation-fill-mode: forwards; 
+    animation-timing-function: ease-out; 
+    background-color:#042F6A; // change button color to blue on click
+  }
+}
+
+::ng-deep .mat-mdc-checkbox.mat-accent .mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background, 
+.mat-mdc-checkbox.mat-accent .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
+.mat-mdc-checkbox.mat-accent .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled ~ .mdc-checkbox__background{
+  border-color: transparent !important;
+  background-color: green;
+}
+
+::ng-deep .mat-mdc-checkbox.mat-accent .mdc-checkbox .mdc-checkbox__mixedmark {
+  background-color: transparent;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: center;
+}
+

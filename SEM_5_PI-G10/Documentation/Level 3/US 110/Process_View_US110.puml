@@ -1,0 +1,46 @@
+boundary x 
+participant Route
+participant Controller 
+participant Service 
+participant User 
+participant Repository 
+database database
+
+
+x -> Route: POST /api/auth/getUserData params: email (json)
+activate Route
+Route -> Controller: handles request 
+activate Controller
+Controller -> Service: calls the method of service to handle the request
+activate Service
+Service -> Repository: verifys if User exists
+activate Repository
+Repository -> database: query
+activate database
+deactivate database
+Repository --> Service: result
+deactivate Repository
+
+Service -> Repository: verifys its role
+activate Repository
+Repository -> database: query
+activate database
+deactivate database
+Repository --> Service: result
+deactivate Repository
+
+Service -> Repository: get user data
+activate Repository
+Repository -> database: query
+activate database
+deactivate database
+Repository --> Service: returns json
+deactivate Repository
+
+Service --> Controller: returns json
+deactivate Service
+
+Controller --> Route: return json file
+deactivate Controller
+Route --> x: response json file
+deactivate Route

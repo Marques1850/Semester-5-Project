@@ -1,0 +1,77 @@
+boundary x 
+participant Route
+participant Controller 
+participant Service 
+participant Mapper 
+participant DTO 
+participant passage 
+participant buildingRepository 
+participant floorRepository
+participant passageRepository 
+database driverDB
+
+
+x -> Route: POST /api/passage/createPassage 
+activate Route
+Route -> Controller: handles the request, calls controller
+activate Controller
+Controller -> Service: send request to service
+
+activate Service
+Service -> buildingRepository: check if buildings exist
+activate buildingRepository
+buildingRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+buildingRepository --> Service: response
+deactivate buildingRepository
+
+
+Service -> floorRepository: check if floors exist
+activate floorRepository
+floorRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+floorRepository --> Service: response
+deactivate floorRepository
+
+
+Service -> passageRepository: check if passage already exists
+activate passageRepository
+passageRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+passageRepository --> Service: response
+deactivate passageRepository
+
+
+Service -> passage: create
+activate passage
+passage --> Service: return passage
+deactivate passage
+
+Service -> passageRepository: save
+activate passageRepository
+passageRepository -> driverDB: save
+activate driverDB
+deactivate driverDB
+passageRepository --> Service: return passage
+deactivate passageRepository
+
+
+Service -> Mapper: convert data
+activate Mapper
+Mapper --> passage: uses data
+activate passage
+deactivate passage
+
+Mapper --> Service: return converted data
+deactivate Mapper
+
+Service --> Controller: return converted data
+deactivate Service
+
+Controller --> Route: return response status and json
+deactivate Controller
+Route --> x: 2. response status and json
+deactivate Route

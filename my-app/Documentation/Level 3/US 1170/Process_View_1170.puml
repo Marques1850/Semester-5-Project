@@ -1,0 +1,69 @@
+actor CampusManager as x 
+participant HTML
+participant Component 
+participant Service 
+participant MGC 
+
+activate x
+x -> HTML: option to create a passage
+activate HTML
+HTML -> Component: triggers function to get all buildings
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/building/buildingsList
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of buildings 
+deactivate Service
+Component --> HTML: returns list of buildings codes
+deactivate Component
+HTML --> x: displays list of buildings codes
+x -> HTML: selects one building code for the passage
+
+HTML -> Component: triggers function to get all floors of building selected
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/building/getBuildingFloors
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of floors
+deactivate Service
+Component --> HTML: returns list of names of floors
+deactivate Component
+HTML --> x: displays list of names of floors
+
+x -> HTML: selects another building code for the passage
+HTML -> Component: triggers function to get all floors of building selected
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/building/getBuildingFloors
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of floors
+deactivate Service
+Component --> HTML: returns list of names of floors
+deactivate Component
+HTML --> x: displays list of names of floors
+
+x -> HTML: selects the floors name for the passage
+HTML -> Component: triggers function to create passage
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: POST /api/passage/createPassage
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns the passage created
+deactivate Service
+Component --> HTML: returns the passage created
+deactivate Component
+HTML --> x: displays the passage created
+deactivate HTML
+deactivate x

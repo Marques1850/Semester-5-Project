@@ -1,0 +1,37 @@
+boundary x 
+participant HTML
+participant Component 
+participant Service 
+participant MGC 
+
+
+x -> HTML: option to edit a elevator
+activate HTML
+HTML -> Component: triggers function to get all buildings
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/elevator/getElevators
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of building codes
+deactivate Service
+Component --> HTML: returns list of building codes
+deactivate Component
+HTML --> x: displays list of buildings codes
+x -> HTML: selects a building code and edits the other parameters
+HTML -> Component: triggers function to edit elevator
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: PATCH /api/elevator/updateElevator
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns edited elevator
+deactivate Service
+Component --> HTML: returns edited elevator
+deactivate Component
+HTML --> x: displays edited elevator
+deactivate HTML

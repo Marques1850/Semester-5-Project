@@ -1,0 +1,44 @@
+boundary x 
+participant floorRoute
+participant floorController <<Controller>>
+participant elevatorService <<Service>>
+participant elevatorRepository <<Repository>>
+participant floorService <<Service>>
+participant floorRepository <<Repository>>
+database driverDB
+
+
+x -> floorRoute: POST /api/floor/listFloorsWithElevators
+activate floorRoute
+floorRoute -> floorController: handles the request, calls controller
+activate floorController
+floorController -> elevatorService: send request to service
+activate elevatorService
+
+elevatorService -> elevatorRepository: get elevator data
+activate elevatorRepository
+elevatorRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+elevatorRepository --> elevatorService: response
+deactivate elevatorRepository
+elevatorService -> floorController: return response
+deactivate elevatorService
+
+floorController -> floorService: send request to service
+activate floorService
+floorService -> floorRepository: get floors for building
+activate floorRepository
+floorRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+floorRepository --> floorService: response
+deactivate floorRepository
+floorService -> floorController: return response
+deactivate floorService
+floorController -> floorController: compare elevators floors and floors floors
+floorController -> floorRoute: return response status and json with respective floors
+
+deactivate floorController
+floorRoute --> x: 2. response status and json
+deactivate floorRoute

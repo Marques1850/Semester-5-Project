@@ -1,0 +1,76 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+autonumber
+
+participant ":SpecifyLocationController" as CTRL
+participant ":Repositories" as RP
+participant "repositories\n:Repositories" as repositories
+participant "agencyRepository\n:AgencyRepository" as AgencyRepository
+
+autonumber 7
+group Check Store Location
+alt successful case
+-> CTRL : checkStoresLocation(stateAbbreviation)
+autonumber 7.1
+            activate CTRL
+
+                        CTRL -> RP: getInstance()
+                    activate RP
+
+                        RP --> CTRL: repositories
+                    deactivate RP
+
+                        CTRL -> repositories: getAgencyRepository()
+                    activate repositories
+
+                        repositories -> CTRL: agencyRepository
+                    deactivate repositories
+
+                    CTRL -> AgencyRepository: checkStoresLocation(stateAbbreviation)
+                activate AgencyRepository
+
+                    AgencyRepository --> CTRL: location verified (true)
+                deactivate AgencyRepository
+
+autonumber 8
+
+                <-- CTRL : location verified (true)
+                deactivate CTRL
+
+
+    else unsuccessful case
+    autonumber 7.1
+
+                -> CTRL : checkStoresLocation(stateAbbreviation)
+                activate CTRL
+
+                            CTRL -> RP: getInstance()
+                        activate RP
+
+                            RP --> CTRL: repositories
+                        deactivate RP
+
+                            CTRL -> repositories: getAgencyRepository()
+                        activate repositories
+
+                            repositories -> CTRL: agencyRepository
+                        deactivate repositories
+
+                        CTRL -> AgencyRepository: checkStoresLocation(stateAbbreviation)
+                    activate AgencyRepository
+
+                        AgencyRepository --> CTRL: location impossible to verify (false)
+                    deactivate AgencyRepository
+
+                    autonumber 8
+
+                    <-- CTRL: asks to submit new data
+                deactivate CTRL
+    end
+
+    end
+
+@enduml

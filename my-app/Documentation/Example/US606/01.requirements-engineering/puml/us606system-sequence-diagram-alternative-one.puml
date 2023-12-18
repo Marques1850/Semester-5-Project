@@ -1,0 +1,20 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US606
+
+autonumber
+
+actor "User" as Admin
+participant ":System" as System
+
+activate Admin
+
+        Admin -> System : Pressiona uma tecla (WASD)
+    activate System
+
+        System --> Admin : Mostra visualmente a movimentação do robot na respetiva direção
+    deactivate System
+
+@enduml

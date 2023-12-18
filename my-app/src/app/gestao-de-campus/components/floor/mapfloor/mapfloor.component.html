@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...your-integrity-code-here..." crossorigin="anonymous" />
+    <title>Login</title>
+  </head>
+  <body style="margin: 0">
+    <header>
+      <h1>robdroneGO</h1>
+      <button class="home-button" (click)="goToHome()">
+        <i class="fas fa-home"></i>
+    </button>
+    </header>
+    <div class="background-image">
+      <form [formGroup]="mapForm" (ngSubmit)="uploadMap()">
+        <h1>Upload floor map</h1>
+        <div class="form-control">
+          <label for="buildingCode">Building Code:</label>
+          <select id="buildingCode" formControlName="buildingCode">
+            <option *ngFor="let codeBuil of buildingList" >{{ codeBuil }}</option>
+          </select>
+          <span class="error-message" *ngIf="(mapForm.controls.buildingCode.invalid && submitted)">
+            Building Code is invalid.
+          </span>
+        </div>
+        <div class="form-control">
+          <label for="name">Floor Name:</label>
+          <select id="name" [(ngModel)]="selectedFloor" formControlName="name">
+            <option *ngFor="let floorName of selectedBuildingFloors" >{{ floorName }}</option>
+          </select>
+          <span class="error-message" *ngIf="(mapForm.controls.name.invalid && submitted)">
+            Name is invalid.
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="file">{{ selectedFileName || 'Choose File' }}</label>
+          <input type="file" id="file" (change)="handleFileInput($event)">
+          <div class="rotating-border"></div>
+        </div>
+        
+        <button type="submit">Upload</button>
+
+        <pre *ngIf="serverResponse" class="server-response">{{ serverResponse }}</pre>
+
+        <button type="button" class="goBackButton" (click)="goBackToMenu()">Back to Menu</button>
+      </form>      
+    </div>
+
+    <footer>
+      <div class="footer-content">
+          <div class="footer-columns">
+              <div class="footer-column">
+                  <h3 class="footer-titles">Team</h3>
+                  <ul>
+                  <li>Sérgio Marques</li>
+                  <li>Pedro Alves</li>
+                  <li>Francisco Gouveia</li>
+                  <li>Francisco Marques</li>
+                  <li>Leonardo Miranda</li>
+                  <li><a routerLink="/about-us">Know more about us</a></li>
+                  </ul>
+              </div>
+              
+              <div class="footer-column">
+                  <h3 class="footer-titles">Project</h3>
+                  <ul>
+                  <li>Integrative Project</li>
+                  <li>5th for the semester</li>
+                  <li>of the Degree in </li>
+                  <li>Computer Engineering</li>
+                  <li>(ISEP)</li>
+                  </ul>
+              </div>
+              
+              <div class="footer-column">
+                  <h3 class="footer-titles">Group</h3>
+                  <ul>
+                  <li>G10</li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div class="footer-image">
+              <img src="./../../assets/logo_isep_2023.png" alt="Footer Image">
+          </div>
+      </div>
+
+      <div class="footer-bottom-container">
+          <div class="footer-bottom">
+              <ul>
+              <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="#">Terms of Sale</a></li>
+              <li><a href="#">Acceptable Use Policy</a></li>
+              <li><a href="#">User Agreement</a></li>
+              </ul>
+          </div>
+      </div>
+    </footer>
+    
+  </body>
+</html>
+
+

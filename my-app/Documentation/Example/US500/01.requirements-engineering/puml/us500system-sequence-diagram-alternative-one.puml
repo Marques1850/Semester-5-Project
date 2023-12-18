@@ -1,0 +1,24 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US500
+
+autonumber
+
+actor "Gestor de Tarefas" as Admin
+participant ":System" as System
+
+activate Admin
+
+Admin -> System : Pede a sequência de execução das tarefas aprovadas
+activate System
+System-> Admin : Pede o algoritmo a Usar
+deactivate System
+Admin-> System: Escolhe o algoritmo
+activate System
+
+System --> Admin : Apresenta a sequência de execução das tarefas aprovadas
+deactivate System
+
+@enduml

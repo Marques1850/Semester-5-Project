@@ -1,0 +1,180 @@
+@startuml DDD
+
+skinparam linetype ortho
+hide circle
+hide methods
+
+title DDD Model
+
+package Building #00FFFF {
+	class Building <<Root>>{
+        +codigo: string  
+		+name: string 
+		+description: string 
+	}
+}
+
+package Floor #fe7968{
+    class Floor <<Root>>{
+		+name: string
+        +description: string
+        +buildingCode: string
+        +level: number
+        +width: number
+        +length: number
+        +rooms: room[]
+        +plant: String[][]
+	}
+
+    class Room {
+	    +name: string
+        +description: string
+        +roomtype: Roomtype
+    }
+    
+	class Roomtype <<enum>>{
+	    +Gabinete
+        +Laboratorio
+        +Ànfiteatro
+        +Outro
+    }
+}
+
+package Robot #c9f29b{
+    class Robot <<Root>> {
+        +code: string
+        +nickname: string
+        +robotTypeCode: string
+        +serialNumber: string
+        +description: string
+        +status: RobotStatus
+    }
+
+    class RobotStatus <<enum>> {
+        +Active
+        +Inactive
+        +Maintenance
+        +Inhibited
+    }
+}
+
+package RobotType #f27935{
+    class RobotType <<Root>> {
+        +code: string
+        +description: string
+        +tasksCode: string[]
+    }
+}
+
+package Task #f2c2ff{
+    class Task <<Root>>{
+        +codigo: string
+        +taskDescription: string
+    }
+    class VigilanceTask {  
+        +floorToMonitor: string
+        +emergencyNumber: number
+    }
+
+    class DeliveryTask {
+        +pickUpRoom: string
+        +deliveryRoom: string
+        +pickUpContactName: string
+        +deliveryContactName: string
+        +pickUpContactPhone: number
+        +deliveryContactPhone: number
+    }
+
+}
+
+enum TypeTask {
+    +VIGILANCE  
+    +DELIVERY
+}
+
+
+package Utilizador #b7f4d8{
+	class Utilizador <<Root>>{
+        +id
+        +nome
+        +email 
+		+password 
+		+role 
+		+description 
+	}
+	
+	class Role <<enum>>{
+		+AdministradorDeSistema
+		+GestorDeFrota
+		+GestorDeCampus
+        +Utente
+        +GestorDeTarefas
+	}
+}
+
+package Passage #e3ba8f{
+    class Passage <<Root>> {
+        +codigo: string
+        +codeBuilding1: string
+        +codeBuilding2: string
+        +FloorBuilding1Name: string
+        +FloorBuilding2Name: string
+    }
+}
+
+package Elevator #fffc7f{
+    class Elevator <<Root>> {
+        +BuildingCode: string
+        +ElevatorCode:string
+        +FloorsAttended:number[]
+        +ElevatorType?: elevatorType
+        +NumSerie?:string
+        +Description?:string
+    }
+
+    class ElevatorType <<enum>> {
+        +marca: string
+        +modelo: string
+    }
+}
+
+'Relationships
+
+Building --o Floor: possui >
+
+Floor --o Room: possui >
+Floor -- Elevator: possui >
+Floor -- Passage: possui >
+
+Room --o Roomtype: have >
+
+Robot -* RobotType: é do tipo >
+Robot -- RobotStatus: está em >
+Robot --o Task: executa >
+
+RobotType --* TypeTask: pode ser para >
+
+Utilizador --* Task: é criada por >
+
+Utilizador --* Role: é do tipo >
+Role --> Robot: tem permissao >
+
+DeliveryTask --|> Task: é uma >
+VigilanceTask --|> Task: é uma >
+
+Passage "1" -- "2" Building : is in buildings >
+Floor "1" -- "0..*" Room : rooms >
+Floor "1" -- "1" Elevator : elevator >
+Elevator "1" -- "0..*" Floor : attended >
+Floor "2" -- "1" Passage : passage <
+Floor "1" -- "1" Building : have a building >
+
+Elevator "1" -- "1" Building :  is in a >
+Elevator "1" -- "1" ElevatorType : is a >
+Task "1" -- "1" Floor : monitors >
+Task "1" -- "1" Floor : pickups and delivers in rooms >
+
+TypeTask "1" - "0..*" Task : tem <
+
+@enduml
+

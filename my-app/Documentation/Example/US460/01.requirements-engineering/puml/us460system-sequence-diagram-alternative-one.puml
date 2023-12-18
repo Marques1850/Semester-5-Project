@@ -1,0 +1,43 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US460
+
+autonumber
+
+actor "User" as Admin
+participant ":System" as System
+
+activate Admin
+
+        Admin -> System : Requisita uma tarefa
+    activate System
+
+        System --> Admin : Pede o ponto inicial
+    deactivate System
+    
+            Admin -> System : Informa o ponto inicial
+        activate System
+            
+                System --> Admin : Pede o ponto final
+            deactivate System
+            
+                    Admin -> System : Informa o ponto final
+                activate System
+                    
+                        System --> Admin : Pede o tipo de tarefa
+                    deactivate System
+                    
+                            Admin -> System : Informa o tipo de tarefa
+                        activate System
+                        System --> Admin : Pede a descrição da tarefa
+                        deactivate System
+                        Admin -> System : Informa a descrição da tarefa
+                            
+                                System --> Admin : Pede as restantes informações
+                            deactivate System
+                            
+                                    Admin -> System : Informa as restantes informações
+
+@enduml

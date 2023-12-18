@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-...your-integrity-code-here..." crossorigin="anonymous" />
+    <title>Login</title>
+  </head>
+  <body style="margin: 0">
+    <header>
+      <h1>robdroneGO</h1>
+      <button class="home-button" (click)="goToHome()">
+        <i class="fas fa-home"></i>
+      </button>
+    </header>
+    <div class="background-image">
+      <form [formGroup]="roomForm" (ngSubmit)="createRoom()">
+        <h1>Create Room</h1>
+        <div class="form-control">
+          <label for="buildingCode">Building Code:</label>
+          <select id="buildingCode" formControlName="buildingCode">
+            <option value="" disabled selected>Select a Building </option>
+            <option *ngFor="let codeBuil of buildingList" >{{ codeBuil }}</option>
+          </select>
+          <span class="error-message" *ngIf="(roomForm.controls.buildingCode.invalid && submitted)">
+            Building Code is invalid.
+          </span>
+        </div>
+        <div class="form-control">
+          <label for="floorName">Floor Name:</label>
+          <select id="floorName" [(ngModel)]="selectedFloor" formControlName="floorName">
+            <option *ngFor="let floorName of selectedBuildingFloors" >{{ floorName }}</option>
+          </select>
+          <span class="error-message" *ngIf="(roomForm.controls.floorName.invalid && submitted)">
+            floorName is invalid.
+          </span>
+        </div>
+        <div class="form-control">
+          <label for="name">Name:</label>
+          <input type="text" id="name" formControlName="name">
+        </div>
+        <div class="form-control">
+          <label for="description">Description:</label>
+          <input type="text" id="description" formControlName="description">
+        </div>
+        <div class="form-control">
+          <label for="roomtype">Room Type:</label>
+          <select id="roomtype" formControlName="roomtype">
+            <option value="" disabled selected>Select a room type</option>
+            <option *ngFor="let roomtype of selectedRoomTypes" >{{ roomtype }}</option>
+          </select>
+        </div>
+        <button type="submit">Create</button>
+
+        <pre *ngIf="serverResponse" class="server-response">{{ serverResponse }}</pre>
+
+        <button type="button" class="goBackButton" (click)="goBackToMenu()">Back to Menu</button>
+      </form>      
+    </div>
+
+    <footer>
+      <div class="footer-content">
+          <div class="footer-columns">
+              <div class="footer-column">
+                  <h3 class="footer-titles">Team</h3>
+                  <ul>
+                  <li>Sérgio Marques</li>
+                  <li>Pedro Alves</li>
+                  <li>Francisco Gouveia</li>
+                  <li>Francisco Marques</li>
+                  <li>Leonardo Miranda</li>
+                  <li><a routerLink="/about-us">Know more about us</a></li>
+                  </ul>
+              </div>
+              
+              <div class="footer-column">
+                  <h3 class="footer-titles">Project</h3>
+                  <ul>
+                  <li>Integrative Project</li>
+                  <li>5th for the semester</li>
+                  <li>of the Degree in </li>
+                  <li>Computer Engineering</li>
+                  <li>(ISEP)</li>
+                  </ul>
+              </div>
+              
+              <div class="footer-column">
+                  <h3 class="footer-titles">Group</h3>
+                  <ul>
+                  <li>G10</li>
+                  </ul>
+              </div>
+          </div>
+          
+          <div class="footer-image">
+              <img src="./../../assets/logo_isep_2023.png" alt="Footer Image">
+          </div>
+      </div>
+
+      <div class="footer-bottom-container">
+          <div class="footer-bottom">
+              <ul>
+              <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
+              <li><a href="#">Terms of Sale</a></li>
+              <li><a href="#">Acceptable Use Policy</a></li>
+              <li><a href="#">User Agreement</a></li>
+              </ul>
+          </div>
+      </div>
+    </footer>
+    
+  </body>
+</html>
+

@@ -1,0 +1,38 @@
+boundary x 
+participant HTML
+participant Component 
+participant Service 
+participant MGC 
+
+
+
+x -> HTML: option to list elevators of a building
+activate HTML
+HTML -> Component: triggers function to get all buildingsWithElevators
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/elevator/getElevators
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of elevators 
+deactivate Service
+Component --> HTML: returns list of buildings with elevators
+deactivate Component
+HTML --> x: displays list of buildings codes
+x -> HTML: selects a building
+HTML -> Component: triggers function to get the elevator of building selected
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/elevator/getElevator
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns  elevator
+deactivate Service
+Component --> HTML: returns elevator
+deactivate Component
+HTML --> x: displays elevator
+deactivate HTML

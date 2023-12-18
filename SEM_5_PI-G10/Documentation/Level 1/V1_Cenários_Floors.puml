@@ -1,0 +1,14 @@
+@startuml
+title Floors Use Case Diagram
+
+actor SystemAdmin as A
+usecase (CreateFloor) as CF
+usecase (UpdateFloorInfo) as UFI
+usecase (ListBuildingFloors) as LBF
+usecase (LoadFloorMap) as LFM
+
+A --> CF
+A --> UFI
+A --> LBF
+A --> LFM
+@enduml

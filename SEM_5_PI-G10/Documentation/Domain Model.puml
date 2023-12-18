@@ -1,0 +1,131 @@
+@startuml DomainModel
+
+title Domain Model
+
+left to right direction
+
+
+class User {
+  +id: Integer
+  +name: String
+  +email: String
+  +password: String
+}
+
+class Role {
+  +name: String
+}
+
+class Robot {
+  +code: string
+  +nickname: string
+  +serialNumber: string
+  +description: string
+}
+
+class RobotType {
+  +code: string
+  +description: string
+}
+
+enum RobotStatus {
+  +Active
+  +Inactive
+  +Maintenance
+  +Inhibited
+}
+
+class Task {
+  +codigo: string
+  +taskDescription: string
+}
+
+class DeliveryTask {
+  +pickUpContactName: string
+  +deliveryContactName: string
+  +pickUpContactPhone: number
+  +deliveryContactPhone: number
+}
+
+class VigilanceTask {
+  +emergencyNumber: number
+}
+
+enum TypeTask {
+  +VIGILANCE  
+  +DELIVERY
+}
+
+class Request {
+  +id: Integer
+  +user: User
+  +task: Task
+  +device: Device
+  +status: String
+}
+
+class Building {
+  +codigo: string  
+  +name: string
+  +description: string
+}
+
+class Floor {
+  +name: string
+  +description: string
+  +width: number
+  +length: number
+  +plant: String[][]
+}
+
+class Room {
+  +name: string
+  +description: string
+}
+
+enum Roomtype {
+  +Gabinete
+  +Laboratorio
+  +Ànfiteatro
+  +Outro
+}
+
+class Passage {
+  +codigo: string
+}
+
+class Elevator {
+  +ElevatorCode: string
+}
+
+User "1" -- "0..*" Request : requests >
+Request "1" -- "1" Task : task >
+Request "0..1" -- "1" Robot : device >
+Robot "1" -- "1" RobotStatus : status >
+Robot "1" -- "1" RobotType : robotType >
+
+Task "1" -- "1" TypeTask : type >
+
+Passage "1" -- "2" Building : buildings >
+Floor "2" -- "1" Passage : floors <
+Floor "1" -- "0..*" Elevator : attends <
+
+Room "1" -- "1" Roomtype : have >
+
+Elevator "0..1" -- "1" Building :  is in a >
+
+DeliveryTask "1" -- "2" Room : pickUpRoom and deliveryRoom >
+VigilanceTask "1" -- "1" Floor : floorToMonitor >
+
+DeliveryTask --|> Task: é uma >
+VigilanceTask --|> Task: é uma >
+RobotType "1" -- "0..*" Task : tem >
+
+Floor "*" -- "1" Building : buildingCode >
+Floor "1" -- "*" Room : rooms >
+
+
+Role "1" -- "1" User : has <
+
+@enduml
+

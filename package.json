@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@types/lodash": "^4.14.201",
+    "@types/three": "^0.158.2",
+    "loadash": "^1.0.0",
+    "mockito": "^1.0.7",
+    "three": "^0.158.0"
+  },
+  "devDependencies": {
+    "ts-mockito": "^2.6.1"
+  }
+}

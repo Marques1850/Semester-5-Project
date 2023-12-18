@@ -1,0 +1,39 @@
+boundary x 
+participant HTML
+participant Component 
+participant Service 
+participant MGF 
+
+
+x -> HTML: option to inhibit a robot
+activate HTML
+HTML -> Component: triggers function to list all robots
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGF: GET /api/robot/GetRobots
+activate MGF
+MGF --> Service: response status and json
+deactivate MGF
+Service --> Component: returns the list of robots
+deactivate Service
+Component --> HTML: returns the list of robots codes
+deactivate Component
+HTML --> x: displays the list of robots codes
+x -> HTML: Choose a robot
+HTML -> Component: triggers function to inhibit a robot
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGF: PATCH /api/robot/InhibitRobot
+activate MGF
+MGF --> Service: response status and json
+deactivate MGF
+Service --> Component: returns the robot information
+deactivate Service
+Component --> HTML: returns the information of the robot
+deactivate Component
+HTML --> x: displays the information of the robot
+
+
+deactivate HTML

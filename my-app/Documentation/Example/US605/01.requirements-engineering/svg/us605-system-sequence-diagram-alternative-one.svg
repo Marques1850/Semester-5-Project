@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="466px" preserveAspectRatio="none" style="width:394px;height:466px;background:#FFFFFF;" version="1.1" viewBox="0 0 394 466" width="394px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="27.6094" id="_title" style="stroke:none;stroke-width:1.0;" width="294" x="49.25" y="10"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="284" x="54.25" y="29.5332">System Sequence Diagram (SSD) - US605</text><rect fill="#FFFFFF" height="234.8125" style="stroke:#181818;stroke-width:1.0;" width="10" x="17.5" y="131.2188"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="351.5" y="153.5703"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="351.5" y="214.2734"/><rect fill="#FFFFFF" height="100.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="351.5" y="274.9766"/><rect fill="#FFFFFF" height="39.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="356.5" y="335.6797"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="22" x2="22" y1="121.2188" y2="384.0313"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="356.5" x2="356.5" y1="121.2188" y2="384.0313"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="5" y="118.1426">User</text><ellipse cx="22.5" cy="52.1094" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M22.5,60.1094 L22.5,87.1094 M9.5,68.1094 L35.5,68.1094 M22.5,87.1094 L9.5,102.1094 M22.5,87.1094 L35.5,102.1094 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="29" x="5" y="397.5645">User</text><ellipse cx="22.5" cy="409.1406" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M22.5,417.1406 L22.5,444.1406 M9.5,425.1406 L35.5,425.1406 M22.5,444.1406 L9.5,459.1406 M22.5,444.1406 L35.5,459.1406 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="324.5" y="88.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="331.5" y="110.1426">:System</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="324.5" y="383.0313"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="331.5" y="404.5645">:System</text><rect fill="#FFFFFF" height="234.8125" style="stroke:#181818;stroke-width:1.0;" width="10" x="17.5" y="131.2188"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="351.5" y="153.5703"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="351.5" y="214.2734"/><rect fill="#FFFFFF" height="100.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="351.5" y="274.9766"/><rect fill="#FFFFFF" height="39.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="356.5" y="335.6797"/><polygon fill="#181818" points="339.5,149.5703,349.5,153.5703,339.5,157.5703,343.5,153.5703" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="27.5" x2="345.5" y1="153.5703" y2="153.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="34.5" y="148.7139">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="271" x="45.5" y="148.7139">Pede para importar um modelo 3D de um robot</text><polygon fill="#181818" points="38.5,179.9219,28.5,183.9219,38.5,187.9219,34.5,183.9219" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="32.5" x2="355.5" y1="183.9219" y2="183.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="44.5" y="179.0654">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="237" x="55.5" y="179.0654">Mostra a lista de modelos 3D disponíveis</text><polygon fill="#181818" points="339.5,210.2734,349.5,214.2734,339.5,218.2734,343.5,214.2734" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="27.5" x2="345.5" y1="214.2734" y2="214.2734"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="34.5" y="209.417">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="115" x="45.5" y="209.417">Escolhe um modelo</text><polygon fill="#181818" points="38.5,240.625,28.5,244.625,38.5,248.625,34.5,244.625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="32.5" x2="355.5" y1="244.625" y2="244.625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="44.5" y="239.7686">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="279" x="55.5" y="239.7686">Mostra a lista de pisos e pede para escolher um</text><polygon fill="#181818" points="339.5,270.9766,349.5,274.9766,339.5,278.9766,343.5,274.9766" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="27.5" x2="345.5" y1="274.9766" y2="274.9766"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="34.5" y="270.1201">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="97" x="45.5" y="270.1201">Escolhe um piso</text><polygon fill="#181818" points="38.5,301.3281,28.5,305.3281,38.5,309.3281,34.5,305.3281" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="32.5" x2="350.5" y1="305.3281" y2="305.3281"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="44.5" y="300.4717">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="289" x="55.5" y="300.4717">Pede que introduza a localização do robot no piso</text><polygon fill="#181818" points="344.5,331.6797,354.5,335.6797,344.5,339.6797,348.5,335.6797" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="27.5" x2="350.5" y1="335.6797" y2="335.6797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="34.5" y="330.8232">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="126" x="45.5" y="330.8232">Introduz a localização</text><polygon fill="#181818" points="33.5,362.0313,23.5,366.0313,33.5,370.0313,29.5,366.0313" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="27.5" x2="355.5" y1="366.0313" y2="366.0313"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="39.5" y="361.1748">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="50.5" y="361.1748">Mostra mensagem de sucesso</text><!--MD5=[5360fc6dd7e6c838bb5fec79c0529eb7]
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US605
+
+autonumber
+
+actor "User" as Admin
+participant ":System" as System
+
+activate Admin
+
+        Admin -> System : Pede para importar um modelo 3D de um robot
+    activate System
+
+        System - -> Admin : Mostra a lista de modelos 3D disponíveis
+    deactivate System
+
+        Admin -> System : Escolhe um modelo
+    activate System
+
+        System - -> Admin: Mostra a lista de pisos e pede para escolher um
+    deactivate System
+
+    Admin -> System: Escolhe um piso
+    activate System
+        System - -> Admin : Pede que introduza a localização do robot no piso
+
+        Admin -> System: Introduz a localização
+    activate System
+        System - -> Admin : Mostra mensagem de sucesso
+    deactivate Admin
+
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 18:01:30 BST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: en
+Country: GB
+--></g></svg>

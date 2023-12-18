@@ -1,0 +1,15 @@
+@startuml
+title Elevator Use Case Diagram
+
+actor SystemAdmin as A
+usecase (CreateElevator) as CE
+usecase (UpdateElevator) as UE
+usecase (ListElevators) as LE
+usecase (ListFloorsWithElevators) as LFWE
+A --> CE
+A --> UE
+A --> LE
+A --> LFWE
+
+
+@enduml

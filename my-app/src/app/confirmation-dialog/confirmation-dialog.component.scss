@@ -1,0 +1,26 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.title {
+  color: #010101;
+  text-align: center;
+  font-size: 200%;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.content {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+.mat-dialog-actions {
+  justify-content: center;  /* Align buttons to the center */
+}
+
+.button {
+  background-color: rgb(221, 221, 221);
+  color: #010101;  /* Text color */
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0 8px;  /* Add some space between buttons */
+}
+

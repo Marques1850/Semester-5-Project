@@ -1,0 +1,14 @@
+@startuml
+title Robot Use Case Diagram
+
+actor Fleet Manager as FM
+usecase (CreateRobot) as CR
+usecase (InhibitRobot) as IR
+usecase (ListRobots) as LR
+usecase (listByTaskOrDesignation) as LTD
+
+FM --> CR
+FM --> IR
+FM --> LR
+FM --> LTD
+@enduml

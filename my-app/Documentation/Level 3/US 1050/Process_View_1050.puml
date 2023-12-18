@@ -1,0 +1,23 @@
+boundary x 
+participant HTML
+participant Component 
+participant Service 
+participant MGC 
+
+
+x -> HTML: option to create a building and type building \n name,code,description, width, height
+activate HTML
+HTML -> Component: triggers function to create a building
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: POST /api/building/createBuilding
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns building created
+deactivate Service
+Component --> HTML: returns building created
+deactivate Component
+HTML --> x: displays building created
+deactivate HTML

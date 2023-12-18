@@ -1,0 +1,35 @@
+actor User as x 
+participant HTML
+participant Component 
+participant ConfirmationComponent
+participant Service 
+participant MGU 
+
+activate x
+x -> HTML: option to download user data
+activate HTML
+HTML -> Component: triggers function to create a pop up of confirmation
+activate Component
+Component -> ConfirmationComponent : calls
+activate ConfirmationComponent
+ConfirmationComponent --> Component
+deactivate ConfirmationComponent
+Component --> HTML 
+deactivate Component
+HTML --> x : Pop up for confirmation
+x -> HTML : confirms
+HTML -> Component: triggers function to get user data
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGU: GET /api/auth/getMyData
+activate MGU
+MGU --> Service: response status and json
+deactivate MGU
+Service --> Component: returns json
+deactivate Service
+Component --> HTML: returns json
+deactivate Component
+HTML --> x: returns json
+deactivate HTML
+deactivate x

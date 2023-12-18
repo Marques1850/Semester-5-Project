@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-...your-integrity-code-here..." crossorigin="anonymous" />
+    <title>Login</title>
+</head>
+
+<body style="margin: 0">
+    <header>
+        <h1>robdroneGO</h1>
+        <button class="home-button" onclick="goToHome()">
+            <i class="fas fa-home"></i>
+        </button>
+    </header>
+    <div class="background-image">
+        <form [formGroup]="singupForm" (submit)="singUp()" autocomplete="new-password">
+            <h1>Sign Up</h1>
+
+            <div class="form-control">
+                <label for="firstName">First Name</label>
+                <input formControlName="firstName" id="firstName" autocomplete="new-password" type="firstName"
+                    placeholder="First Name" />
+                <span class="error-message" *ngIf="(singupForm.controls.firstName.invalid && submitted)">
+                    First name is invalid
+                </span>
+            </div>
+
+            <div class="form-control">
+                <label for="lastName">Last Name</label>
+                <input formControlName="lastName" id="lastName" autocomplete="new-password" type="lastName"
+                    placeholder="Last Name" />
+                <span class="error-message" *ngIf="(singupForm.controls.lastName.invalid && submitted)">
+                    Last name is invalid
+                </span>
+            </div>
+
+            <div class="form-control">
+                <label for="phoneNumber">Phone Number</label>
+                <input formControlName="phoneNumber" id="phoneNumber" autocomplete="new-password" type="phoneNumber"
+                    placeholder="Phone Number" />
+                <span class="error-message" *ngIf="(singupForm.controls.phoneNumber.invalid && submitted)">
+                    Phone Number is invalid
+                </span>
+            </div>
+
+            <div class="form-control">
+                <label for="taxpayerNumber">Taxpayer Number</label>
+                <input formControlName="taxpayerNumber" id="taxpayerNumber" autocomplete="new-password" type="taxpayerNumber"
+                    placeholder="Taxpayer Number" />
+                <span class="error-message" *ngIf="(singupForm.controls.taxpayerNumber.invalid && submitted)">
+                    Taxpayer Number is invalid
+                </span>
+            </div>
+
+            <div class="dotted-line"></div>
+
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input formControlName="email" id="email" autocomplete="new-password" type="email"
+                    placeholder="Email address" />
+                <span class="error-message" *ngIf="(singupForm.controls.email.invalid && submitted)">
+                    Email address is invalid
+                </span>
+            </div>
+
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input formControlName="password" id="password" autocomplete="new-password" type="password"
+                    placeholder="Password" />
+                <span class="error-message" *ngIf="(singupForm.controls.password.invalid && submitted)">
+                    Password is invalid
+                </span>
+            </div>
+
+            <div class="dotted-line"></div>
+
+
+            <button type="submit">Create account</button>
+
+            <pre *ngIf="serverResponse" class="server-response">{{ serverResponse }}</pre>
+
+            <button type="button" class="goBackButton" (click)="goBackToMenu()">Back</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3 class="footer-titles">Team</h3>
+                    <ul>
+                        <li>Sérgio Marques</li>
+                        <li>Pedro Alves</li>
+                        <li>Francisco Gouveia</li>
+                        <li>Francisco Marques</li>
+                        <li>Leonardo Miranda</li>
+                        <li><a routerLink="/about-us">Know more about us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-titles">Project</h3>
+                    <ul>
+                        <li>Integrative Project</li>
+                        <li>5th for the semester</li>
+                        <li>of the Degree in </li>
+                        <li>Computer Engineering</li>
+                        <li>(ISEP)</li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-titles">Group</h3>
+                    <ul>
+                        <li>G10</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-image">
+                <img src="./../../assets/logo_isep_2023.png" alt="Footer Image">
+            </div>
+        </div>
+
+        <div class="footer-bottom-container">
+            <div class="footer-bottom">
+                <ul>
+                    <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Sale</a></li>
+                    <li><a href="#">Acceptable Use Policy</a></li>
+                    <li><a href="#">User Agreement</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

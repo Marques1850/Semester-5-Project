@@ -1,0 +1,8 @@
+@startuml
+title Room Use Case Diagram
+
+actor SystemAdmin as A
+usecase (CreateRoom) as CR
+
+A --> CR
+@enduml

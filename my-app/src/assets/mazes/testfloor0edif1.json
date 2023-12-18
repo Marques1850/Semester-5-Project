@@ -1,0 +1,228 @@
+{
+  "maze": {
+    "size": {
+      "width": 8,
+      "depth": 7
+    },
+    "map": [
+      [
+        3,
+        2,
+        2,
+        2,
+        2,
+        3,
+        2,
+        2,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ],
+      [
+        2,
+        2,
+        2,
+        0,
+        2,
+        2,
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0
+      ]
+    ],
+    "exits": [
+      [
+        2,
+        -1
+      ],
+      [
+        5,
+        8
+      ]
+    ],
+    "elevators": [
+      [
+        2,
+        8
+      ]
+    ],
+    "exitLocation": [
+      2,
+      8
+    ],
+    "_id": "65621b79e0d290b1e6200dc4"
+  },
+  "ground": {
+    "size": {
+      "width": 8,
+      "height": 0.0625,
+      "depth": 7
+    },
+    "segments": {
+      "width": 1,
+      "height": 1,
+      "depth": 1
+    },
+    "primaryColor": "0xffffff",
+    "maps": {
+      "color": {
+        "url": "./../../assets/textures/ground_0003_2k_372HqZ/ground_0003_color_2k.jpg"
+      },
+      "ao": {
+        "url": "./../../assets/textures/ground_0003_2k_372HqZ/ground_0003_ao_2k.jpg",
+        "intensity": 1
+      },
+      "displacement": {
+        "url": "",
+        "scale": 1,
+        "bias": 0
+      },
+      "normal": {
+        "url": "./../../assets/textures/ground_0003_2k_372HqZ/ground_0003_normal_opengl_2k.png",
+        "type": 0,
+        "scale": {
+          "x": 2,
+          "y": 2
+        }
+      },
+      "bump": {
+        "url": "",
+        "scale": 1
+      },
+      "roughness": {
+        "url": "./../../assets/textures/ground_0003_2k_372HqZ/ground_0003_roughness_2k.jpg",
+        "rough": 1
+      }
+    },
+    "wrapS": 1,
+    "wrapT": 1,
+    "repeat": {
+      "u": 4,
+      "v": 4
+    },
+    "magFilter": 1,
+    "minFilter": 5,
+    "secondaryColor": "0x6b554b",
+    "_id": "65621b79e0d290b1e6200dc5"
+  },
+  "wall": {
+    "segments": {
+      "width": 1,
+      "height": 1
+    },
+    "primaryColor": "0xffffff",
+    "maps": {
+      "color": {
+        "url": "./../../assets/textures/concrete_0007_2k_xtGY5J/concrete_0007_color_2k.jpg"
+      },
+      "ao": {
+        "url": "./../../assets/textures/concrete_0007_2k_xtGY5J/concrete_0007_ao_2k.jpg",
+        "intensity": 1
+      },
+      "displacement": {
+        "url": "",
+        "scale": 1,
+        "bias": 0
+      },
+      "normal": {
+        "url": "./../../assets/textures/concrete_0007_2k_xtGY5J/concrete_0007_normal_opengl_2k.png",
+        "type": 0,
+        "scale": {
+          "x": 2,
+          "y": 2
+        }
+      },
+      "bump": {
+        "url": "",
+        "scale": 1
+      },
+      "roughness": {
+        "url": "./../../assets/textures/concrete_0007_2k_xtGY5J/concrete_0007_roughness_2k.jpg",
+        "rough": 1
+      }
+    },
+    "wrapS": 1,
+    "wrapT": 0,
+    "repeat": {
+      "u": 2,
+      "v": 1
+    },
+    "magFilter": 1,
+    "minFilter": 5,
+    "secondaryColor": "0x6b554b",
+    "_id": "65621b79e0d290b1e6200dc6"
+  },
+  "player": {
+    "initialPosition": [
+      3,
+      0
+    ],
+    "initialDirection": 90,
+    "_id": "65621b79e0d290b1e6200dc7"
+  },
+  "_id": "65621b79e0d290b1e6200dc3"
+}

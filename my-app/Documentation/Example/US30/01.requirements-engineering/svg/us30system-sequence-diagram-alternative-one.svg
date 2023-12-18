@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="320px" preserveAspectRatio="none" style="width:866px;height:320px;background:#FFFFFF;" version="1.1" viewBox="0 0 866 320" width="866px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="27.6094" id="_title" style="stroke:none;stroke-width:1.0;" width="286" x="291.25" y="10"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="276" x="296.25" y="29.5332">System Sequence Diagram (SSD) - US30</text><rect fill="#FFFFFF" height="86.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="60.5" y="131.2188"/><rect fill="#FFFFFF" height="63.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="612.5" y="153.5703"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="65" x2="65" y1="121.2188" y2="238.2734"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="617.5" x2="617.5" y1="121.2188" y2="238.2734"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="5" y="118.1426">Utente do Sistema</text><ellipse cx="65.5" cy="52.1094" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M65.5,60.1094 L65.5,87.1094 M52.5,68.1094 L78.5,68.1094 M65.5,87.1094 L52.5,102.1094 M65.5,87.1094 L78.5,102.1094 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="5" y="251.8066">Utente do Sistema</text><ellipse cx="65.5" cy="263.3828" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M65.5,271.3828 L65.5,298.3828 M52.5,279.3828 L78.5,279.3828 M65.5,298.3828 L52.5,313.3828 M65.5,298.3828 L78.5,313.3828 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="585.5" y="88.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="592.5" y="110.1426">:System</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="585.5" y="237.2734"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="592.5" y="258.8066">:System</text><rect fill="#FFFFFF" height="86.0547" style="stroke:#181818;stroke-width:1.0;" width="10" x="60.5" y="131.2188"/><rect fill="#FFFFFF" height="63.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="612.5" y="153.5703"/><polygon fill="#181818" points="600.5,149.5703,610.5,153.5703,600.5,157.5703,604.5,153.5703" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="70.5" x2="606.5" y1="153.5703" y2="153.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="77.5" y="148.7139">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="382" x="88.5" y="148.7139">Inicia processo de consentimento para recolha de dados pessoais</text><polygon fill="#181818" points="81.5,179.9219,71.5,183.9219,81.5,187.9219,77.5,183.9219" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="75.5" x2="611.5" y1="183.9219" y2="183.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="87.5" y="179.0654">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="507" x="98.5" y="179.0654">Solicita explicitamente o consentimento para a recolha e tratamento de dados pessoais</text><polygon fill="#181818" points="605.5,213.2734,615.5,217.2734,605.5,221.2734,609.5,217.2734" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="65.5" x2="611.5" y1="217.2734" y2="217.2734"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="72.5" y="212.417">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="83.5" y="212.417">Dá o consentimento</text><path d="M627,196.9219 L627,222.9219 L859,222.9219 L859,206.9219 L849,196.9219 L627,196.9219 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><path d="M849,196.9219 L849,206.9219 L859,206.9219 L849,196.9219 " fill="#FEFFDD" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="211" x="633" y="215.417">Utente opta por dar o consentimento</text><!--MD5=[fc5487fbde6e793a2eac50c1d21338ba]
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US30
+
+autonumber
+
+actor "Utente do Sistema" as User
+participant ":System" as System
+
+activate User
+
+User -> System : Inicia processo de consentimento para recolha de dados pessoais
+activate System
+
+System - -> User : Solicita explicitamente o consentimento para a recolha e tratamento de dados pessoais
+
+User -> System : Dá o consentimento
+note right: Utente opta por dar o consentimento
+
+deactivate System
+deactivate User
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 18:01:30 BST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

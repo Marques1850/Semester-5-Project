@@ -1,0 +1,77 @@
+boundary x 
+participant floorRoute
+participant floorController <<Controller>>
+participant floorService <<Service>>
+participant floorMap <<Mapper>>
+participant floorDTO <<DTO>>
+participant floor <<Entity>>
+participant buildingRepository <<Repository>>
+participant floorRepository <<Repository>>
+database driverDB
+
+
+x -> floorRoute: 1. PATCH /api/floor/uploadMap  params: name,plant (json)
+activate floorRoute
+floorRoute -> floorController: 2. Handles the request, call floorController.uploadFloorMap(req, res, next)
+activate floorController
+floorController -> floorService: 3. uploadFloorMap(IFloorDTO)
+
+activate floorService
+floorService -> floorRepository: 4. findFloor(IFloorDTO.name)
+activate floorRepository
+floorRepository -> driverDB: 5. findOne()
+activate driverDB
+deactivate driverDB
+floorRepository --> floorService: 6. return floor
+deactivate floorRepository
+
+floorService -> buildingRepository: 7. findByBuildingCode(floor.buildingCode)
+activate buildingRepository
+buildingRepository -> driverDB: 8. find()
+activate driverDB
+deactivate driverDB
+buildingRepository --> floorService: 9. return building
+deactivate buildingRepository
+
+
+floorService -> floorRepository: 10. uploadMapFloorinBuilding(IFloorDTO.name, IFloorDTO.plant)
+activate floorRepository
+floorRepository -> driverDB: 11. findOneAndUpdate()
+activate driverDB
+deactivate driverDB
+floorRepository --> floorService: 12. return floorResult
+deactivate floorRepository
+
+floorService -> floorMap: 13. toDTO(floorResult)
+activate floorMap
+floorMap --> floor: 14. name()
+activate floor
+deactivate floor
+floorMap --> floor: 15. description()
+activate floor
+deactivate floor
+floorMap --> floor: 16. level()
+activate floor
+deactivate floor
+floorMap --> floor: 17. width()
+activate floor
+deactivate floor
+floorMap --> floor: 18. length()
+activate floor
+deactivate floor
+floorMap --> floor: 19. plant()
+activate floor
+deactivate floor
+floorMap --> floor: 20. rooms()
+activate floor
+deactivate floor
+floorMap --> floorService: 21. return floorDTO
+deactivate floorMap
+
+floorService --> floorController: 22. return floorDTO
+deactivate floorService
+
+floorController --> floorRoute: 23. return response status and json
+deactivate floorController
+floorRoute --> x: 24. response status and json
+deactivate floorRoute

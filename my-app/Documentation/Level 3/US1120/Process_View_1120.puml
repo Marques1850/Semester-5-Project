@@ -1,0 +1,54 @@
+@startuml Process_View_1120
+boundary x 
+participant HTML
+participant Component 
+participant Service 
+participant MGC 
+
+
+x -> HTML: option to upload map
+activate HTML
+HTML -> Component: triggers function to get all buildings
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/building/buildingsList
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of buildings 
+deactivate Service
+Component --> HTML: returns list of buildings codes
+deactivate Component
+HTML --> x: displays list of buildings codes
+x -> HTML: selects a building code
+HTML -> Component: triggers function to get all floors of building selected
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/building/getBuildingFloors
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of floors
+deactivate Service
+Component --> HTML: returns list of names of floors
+deactivate Component
+HTML --> x: displays list of names of floors
+x -> HTML: selects a floor name
+x -> HTML: upload the file of the map
+HTML -> Component: triggers function to upload the map
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: PATCH /api/floor/uploadMap
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns success message
+deactivate Service
+Component --> HTML: returns success message
+deactivate Component
+HTML --> x: displays success message
+deactivate HTML
+@enduml

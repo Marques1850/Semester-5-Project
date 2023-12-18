@@ -1,0 +1,25 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US30
+
+autonumber
+
+actor "Utente do Sistema" as User
+participant ":System" as System
+
+activate User
+
+User -> System : Inicia processo de consentimento para recolha de dados pessoais
+activate System
+
+System --> User : Solicita explicitamente o consentimento para a recolha e tratamento de dados pessoais
+
+User -> System : Dá o consentimento
+note right: Utente opta por dar o consentimento
+
+deactivate System
+deactivate User
+
+@enduml

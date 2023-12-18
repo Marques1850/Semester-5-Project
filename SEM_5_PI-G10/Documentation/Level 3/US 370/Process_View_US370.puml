@@ -1,0 +1,65 @@
+boundary x 
+participant robotRoute
+participant robotController <<Controller>>
+participant robotService <<Service>>
+participant robotMap <<Mapper>>
+participant robotDTO <<DTO>>
+participant robot <<Entity>>
+participant robotRepository <<Repository>>
+participant robotTypeRepository <<Repository>>
+database driverDB
+
+
+x -> robotRoute: 1. PATCH /api/robot/createRobot   params: code (json)
+activate robotRoute
+robotRoute -> robotController: 2. Handles the request, call robotController.inhibitRobot(req, res, next)
+activate robotController
+robotController -> robotService: 3. inhibitRobot(IRobotDTO)
+
+activate robotService
+robotService -> robotRepository: 4. findByCode(IRobotDTO.code)
+activate robotRepository
+robotRepository -> driverDB: 5. findOne()
+activate driverDB
+deactivate driverDB
+robotRepository --> robotService: 6. return robot
+deactivate robotRepository
+
+robotService -> robotTypeRepository: 7. inhibitRobot(IRobotDTO.code)
+activate robotTypeRepository
+robotTypeRepository -> driverDB: 8. findOneAndUpdate()
+activate driverDB
+deactivate driverDB
+robotTypeRepository --> robotService: 9. return robotResult
+deactivate robotTypeRepository
+
+robotService -> robotMap: 10. toDTO(robotResult)
+activate robotMap
+robotMap --> robot: 10. code()
+activate robot
+deactivate robot
+robotMap --> robot: 11. nickname()
+activate robot
+deactivate robot
+robotMap --> robot: 12. robotTypeCode()
+activate robot
+deactivate robot
+robotMap --> robot: 13. serialNumber()
+activate robot
+deactivate robot
+robotMap --> robot: 14. description()
+activate robot
+deactivate robot
+robotMap --> robot: 15. status()
+activate robot
+deactivate robot
+robotMap --> robotService: 16. return robotDTO
+deactivate robotMap
+
+robotService --> robotController: 17. return robotDTO
+deactivate robotService
+
+robotController --> robotRoute: 18. return response status and json
+deactivate robotController
+robotRoute --> x: 19. response status and json
+deactivate robotRoute

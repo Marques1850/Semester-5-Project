@@ -1,0 +1,40 @@
+@startuml
+skinparam monochrome false
+skinparam packageStyle rectangle
+'skinparam shadowing false
+'skinparam linetype polyline
+'skinparam linetype orto
+
+skinparam classAttributeIconSize 10
+
+class SpecifyLocationUI{}
+
+class SpecifyLocationController{
+-AgencyRepository agencyRepository
+-SpecifyLocationUI specifyLocationUI;
+-String stateAbbreviation
++checkStoresLocation(stateAbbreviation)
++findStoresLocation(stateAbbreviation)
+}
+
+class Repositories{
+-Repositories()
++getInstance() : Repositories
++getAgencyRepository()
+}
+
+class AgencyRepository{
+-Adress address
+-boolean storesLocationExists
++getAgencyByDesignation()
++checkStoresLocation(stateAbbreviation)
++findStoresLocation(stateAbbreviation)
+}
+
+
+SpecifyLocationUI -- SpecifyLocationController
+SpecifyLocationController <-- "*" Repositories
+SpecifyLocationController <-- "1   " AgencyRepository
+
+
+@enduml

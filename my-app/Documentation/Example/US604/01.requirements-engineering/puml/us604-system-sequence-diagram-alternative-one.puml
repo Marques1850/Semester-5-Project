@@ -1,0 +1,32 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US604
+
+autonumber
+
+actor "User" as Admin
+participant ":System" as System
+
+activate Admin
+
+        Admin -> System : Pede para ver um piso
+    activate System
+
+        System --> Admin : Mostra a lista de edifícios e pede para escolher um
+    deactivate System
+
+        Admin -> System : Escolhe um edifício
+    activate System
+
+        System --> Admin: Mostra a lista de pisos e pede para escolher um
+    deactivate System
+
+        Admin -> System: Escolhe um piso
+    activate System
+        System --> Admin : Mostra mensagem de sucesso
+    deactivate Admin
+
+
+@enduml

@@ -1,0 +1,39 @@
+@startuml Process_View_1020
+boundary x 
+participant HTML
+participant Component 
+participant Service 
+participant MGF 
+
+
+x -> HTML: option to inhibit a robot
+activate HTML
+HTML -> Component: triggers function to get all robots
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGF: GET /api/robot/getRobots
+activate MGF
+MGF --> Service: response status and json
+deactivate MGF
+Service --> Component: returns list of robots 
+deactivate Service
+Component --> HTML: returns list of tobots codes
+deactivate Component
+HTML --> x: displays list of robots codes
+x -> HTML: selects a robot code
+HTML -> Component: triggers function to inhibit the robot
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGF: PATCH /api/robot/inhibitRobot
+activate MGF
+MGF --> Service: response status and json
+deactivate MGF
+Service --> Component: returns robot with updated status
+deactivate Service
+Component --> HTML: returns robot with updated status
+deactivate Component
+HTML --> x: displays robot with updated status
+deactivate HTML
+@enduml

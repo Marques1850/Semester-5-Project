@@ -1,0 +1,61 @@
+boundary x 
+participant Route
+participant Controller 
+participant Service 
+participant Mapper 
+participant DTO 
+participant User 
+participant Repository 
+database database
+
+
+x -> Route: POST /api/auth/createUser params: firstName,lastName,email,password,role (json)
+activate Route
+Route -> Controller: handles request 
+activate Controller
+Controller -> Service: calls the method of service to handle the request
+activate Service
+Service -> Repository: verifys if User already exists
+activate Repository
+Repository -> database: query
+activate database
+deactivate database
+Repository --> Service: result
+deactivate Repository
+
+Service -> Repository: verifys if role exists
+activate Repository
+Repository -> database: query
+activate database
+deactivate database
+Repository --> Service: result
+deactivate Repository
+
+Service -> User: create
+activate User
+User --> Service: return User
+deactivate User
+
+Service -> Repository: save the data
+activate Repository
+Repository -> database: query
+activate database
+deactivate database
+Repository --> Service: returns User
+deactivate Repository
+
+Service -> Mapper: calls Mapper to convert data
+activate Mapper
+Mapper --> User: converts data
+activate User
+deactivate User
+Mapper --> Service: returns DTO
+deactivate Mapper
+
+Service --> Controller: returns DTO
+deactivate Service
+
+Controller --> Route: return response status and json
+deactivate Controller
+Route --> x: response status and json
+deactivate Route

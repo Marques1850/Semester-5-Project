@@ -1,0 +1,108 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+autonumber
+
+actor "System Administrator" as ADM
+participant ":SpecifyLocationUI" as UI
+participant ":SpecifyLocationController" as CTRL
+participant ":Repositories" as RP
+participant "repositories\n:Repositories" as rRP
+participant "agencyRepository:\nAgencyRepository" as AgencyRepository
+
+activate ADM
+
+        ADM -> UI : requests to specify a location
+    activate UI
+
+        UI -> CTRL**: create specify location controller
+
+        UI --> ADM : requests data
+    deactivate UI
+
+        ADM -> UI : types requested data (stateAbbreviation)
+    activate UI
+
+            UI -> UI : keepData()
+            activate UI
+            deactivate UI
+
+        UI --> ADM: shows requested data
+    deactivate UI
+
+        ADM -> UI: submits data
+    activate UI
+
+    UI -> CTRL: checkStoresLocation(stateAbbreviation)
+            activate CTRL
+
+                        CTRL -> RP: getInstance()
+                    activate RP
+
+                        RP --> CTRL: repositories
+                    deactivate RP
+
+                        CTRL -> rRP: getAgencyRepository()
+                    activate rRP
+
+                        rRP -> CTRL: agencyRepository
+                    deactivate rRP
+
+                    CTRL -> AgencyRepository: checkStoresLocation(stateAbbreviation)
+                activate AgencyRepository
+
+                    AgencyRepository --> CTRL: location verified
+                deactivate AgencyRepository
+
+                CTRL --> UI: location verified
+            deactivate CTRL
+
+
+            UI -> CTRL: findStoresLocation(stateAbbreviation)
+        activate CTRL
+
+                CTRL -> RP: getInstance()
+            activate RP
+
+                RP --> CTRL: repositories
+            deactivate RP
+
+                CTRL -> rRP: getAgencyRepository()
+            activate rRP
+
+                rRP -> CTRL: agencyRepository
+            deactivate rRP
+
+                CTRL -> AgencyRepository: findStoresLocation(stateAbbreviation)
+            activate AgencyRepository
+
+                AgencyRepository --> CTRL: locationsList
+            deactivate AgencyRepository
+
+            CTRL --> UI: locationsList
+        deactivate CTRL
+
+        UI --> ADM : shows locationsList
+    deactivate UI
+
+        ADM -> UI : selects one of the locations
+        activate UI
+
+        UI -> UI: keepData()
+        activate UI
+        deactivate UI
+
+        UI --> ADM : shows location selected and requests confirmation
+deactivate UI
+
+        ADM -> UI : confirms location
+    activate UI
+
+        UI --> ADM : displays operation success
+    deactivate ADM
+
+deactivate ADM
+
+@enduml

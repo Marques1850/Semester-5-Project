@@ -1,0 +1,31 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US470
+
+autonumber
+
+actor "Gestor de Tarefas" as Admin
+participant ":System" as System
+
+activate Admin
+
+        Admin -> System : Pede a lista de tarefas requisitadas
+    activate System
+
+        System --> Admin : Devolve a lista de tarefas requisitadas
+    deactivate System
+    
+            Admin -> System : Escolhe a tarefa
+        activate System
+            
+                System --> Admin : Pede se o estado do requisito
+            deactivate System
+            
+                    Admin -> System : Informa o estado do requisito
+                activate System
+                System --> Admin : Devolve mensagem de sucesso
+    
+
+@enduml

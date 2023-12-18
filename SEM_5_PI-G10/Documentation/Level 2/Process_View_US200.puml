@@ -1,0 +1,12 @@
+boundary x 
+participant API
+participant System
+
+x -> API: PATCH-> /api/floor/updateFloor
+activate API
+API -> System: handles the request
+activate System
+System -> API: 5. response status and json
+deactivate System
+API --> x: 2. response status and json
+deactivate API

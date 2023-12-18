@@ -1,0 +1,35 @@
+<h1 mat-dialog-title class="title">Data Consent</h1>
+
+<mat-dialog-content> 
+    <p><strong>Updated 11 November, 2023</strong></p>
+    <p class="team-text">
+        Os dados pessoais dos utilizadores são recolhidos e tratados com o objetivo de permitir o acesso e o uso das funcionalidades da aplicação, de acordo com as preferências e necessidades de cada um. Os dados são usados para o login, para personalizar a interface, para fornecer serviços e para garantir a segurança da aplicação.
+        <br><br>
+        O utilizador está ciente de que o responsável pelo tratamento dos seus dados pessoais é o grupo G10 da turma 3DB, que desenvolveu esta aplicação como parte de um projeto académico. O utilizador pode entrar em contato com o grupo através dos seguintes endereços de e-mail: 
+        <ul>
+            <li>1211705&#64;isep.ipp.pt</li>
+            <li>1211702&#64;isep.ipp.pt</li>
+            <li>1201264&#64;isep.ipp.pt</li>
+            <li>1200824&#64;isep.ipp.pt</li>
+            <li>1201850&#64;isep.ipp.pt</li>
+        </ul>
+        caso tenha alguma dúvida, sugestão ou reclamação sobre o uso dos seus dados.
+        <br><br>
+        Os dados são armazenados por um período de um ano.
+        <br><br>
+        Os seus direitos enquanto titular de dados pessoais são garantidos pela Lei Geral de Proteção de Dados (LGPD), que entrou em vigor em 2020. Entre os seus direitos, estão:
+        <ul>
+            <li>Acesso aos meus dados pessoais: posso solicitar a qualquer momento uma cópia dos meus dados pessoais que estão sendo tratados por uma organização.</li>
+            <li>Correção dos meus dados pessoais: posso solicitar a retificação ou a atualização dos meus dados pessoais que estejam incompletos, inexatos ou desatualizados.</li>
+            <li>Eliminação dos meus dados pessoais: posso solicitar a exclusão dos meus dados pessoais que não sejam mais necessários para a finalidade para a qual foram coletados, ou que tenham sido tratados de forma ilegal ou abusiva.</li>
+        </ul>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <mat-checkbox #consentCheckbox class="checkBoxS">Accept</mat-checkbox>
+</mat-dialog-actions>
+
+<mat-dialog-actions>
+    <button mat-button (click)="onSubmit(consentCheckbox.checked)" class="button">Submit</button>  
+</mat-dialog-actions>

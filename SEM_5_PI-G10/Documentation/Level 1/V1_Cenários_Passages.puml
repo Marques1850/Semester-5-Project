@@ -1,0 +1,14 @@
+@startuml
+title Passages Use Case Diagram
+
+actor SystemAdmin as A
+usecase (CreatePassage) as CP
+usecase (UpdatePassage) as UP
+usecase (ListPassages) as LP
+usecase (ListFloorsWithPassages) as LFP
+
+A --> CP
+A --> UP
+A --> LP
+A --> LFP
+@enduml

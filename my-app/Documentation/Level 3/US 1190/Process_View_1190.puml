@@ -1,0 +1,24 @@
+boundary x 
+participant HTML
+participant Component 
+participant Service 
+participant MGC 
+
+
+
+x -> HTML: option to list passages between 2 buildings
+activate HTML
+HTML -> Component: triggers function to get all passages between 2 buildings
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGC: GET /api/passage/listPassagesBetweenBuildings
+activate MGC
+MGC --> Service: response status and json
+deactivate MGC
+Service --> Component: returns list of passages 
+deactivate Service
+Component --> HTML: returns list of passages
+deactivate Component
+HTML --> x: displays list of passages
+deactivate HTML

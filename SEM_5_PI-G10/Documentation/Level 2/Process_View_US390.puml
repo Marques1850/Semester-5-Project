@@ -1,0 +1,13 @@
+@startuml Process_View_US380
+boundary x 
+participant API
+participant System
+
+x -> API: 1. Get -> /api/robot/getRobotsByTask
+activate API
+API -> System: 2. Handles the request
+activate System
+System -> API: 3. Returns response status and json
+deactivate System
+API --> x: 4. response status and json
+deactivate API

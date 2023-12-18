@@ -1,0 +1,20 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US607
+
+autonumber
+
+actor "User" as Admin
+participant ":System" as System
+
+activate Admin
+
+        Admin -> System : Interage com uma passagem
+    activate System
+
+        System --> Admin : Mostra um UI que descreve a passagem destino e carrega o novo piso a ser mostrado
+    deactivate System
+
+@enduml

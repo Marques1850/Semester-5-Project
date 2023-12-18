@@ -1,0 +1,60 @@
+boundary x 
+participant buildingRoute
+participant buildingController <<Controller>>
+participant buildingService <<Service>>
+participant buildingMap <<Mapper>>
+participant buildingDTO <<DTO>>
+participant building <<Entity>>
+participant buildingRepository <<Repository>>
+database driverDB
+
+
+x -> buildingRoute: 1. PUT /api/building/updatebuilding  params: codigo,name,description,width,length (json)
+activate buildingRoute
+buildingRoute -> buildingController: 2. Handles the request, call buildingController.updateBuilding(req, res, next)
+activate buildingController
+buildingController -> buildingService: 3. updatebuilding(IbuildingDTO)
+activate buildingService
+buildingService -> buildingRepository: 4. findByBuildingCode(IbuildingDTO.codigo)
+activate buildingRepository
+buildingRepository -> driverDB: 5. findOne()
+activate driverDB
+deactivate driverDB
+buildingRepository --> buildingService: 6. return building
+deactivate buildingRepository
+
+buildingService -> buildingRepository: 7. changeBuilding(IBuildingDTO.codigo, IBuildingDTO.name, IBuildingDTO.description, IBuildingDTO.width, IBuildingDTO.length)
+activate buildingRepository
+buildingRepository -> driverDB: 8. findOneAndUpdate()
+activate driverDB
+deactivate driverDB
+buildingRepository --> buildingService: 9. return building
+deactivate buildingRepository
+
+buildingService -> buildingMap: 10. toDTO(building)
+activate buildingMap
+buildingMap --> building: 11. codigo()
+activate building
+deactivate building
+buildingMap --> building: 12. name()
+activate building
+deactivate building
+buildingMap --> building: 13. description()
+activate building
+deactivate building
+buildingMap --> building: 14. width()
+activate building
+deactivate building
+buildingMap --> building: 15. length()
+activate building
+deactivate building
+buildingMap --> buildingService: 16. return buildingDTO
+deactivate buildingMap
+
+buildingService --> buildingController: 17. return buildingDTO
+deactivate buildingService
+
+buildingController --> buildingRoute: 18. return response status and json
+deactivate buildingController
+buildingRoute --> x: 19. response status and json
+deactivate buildingRoute

@@ -1,0 +1,64 @@
+boundary x 
+participant Route
+participant Controller 
+participant Service 
+participant Mapper 
+participant DTO 
+participant floor 
+participant buildingRepository 
+participant floorRepository 
+database driverDB
+
+
+x -> Route: POST /api/floor/createFloor
+activate Route
+Route -> Controller: handles the request, calls controller
+activate Controller
+Controller -> Service: send request to service
+activate Service
+
+Service -> buildingRepository: check if building exists
+activate buildingRepository
+buildingRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+buildingRepository --> Service: response
+deactivate buildingRepository
+
+Service -> floorRepository: check if floor already exists
+activate floorRepository
+floorRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+floorRepository --> Service: response
+deactivate floorRepository
+
+Service -> floor: create
+activate floor
+floor --> Service: return floor
+deactivate floor
+
+Service -> floorRepository: save
+activate floorRepository
+floorRepository -> driverDB: save
+activate driverDB
+deactivate driverDB
+floorRepository --> Service: return floor
+deactivate floorRepository
+
+Service -> Mapper: convert data
+activate Mapper
+Mapper --> floor: uses data
+activate floor
+deactivate floor
+
+Mapper --> Service: return converted data
+deactivate Mapper
+
+Service --> Controller: return converted data
+deactivate Service
+
+Controller --> Route: return response status and json
+deactivate Controller
+Route --> x: 2. response status and json
+deactivate Route

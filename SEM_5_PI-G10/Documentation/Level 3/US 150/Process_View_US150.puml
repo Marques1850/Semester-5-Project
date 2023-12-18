@@ -1,0 +1,65 @@
+boundary x 
+participant buildingRoute
+participant buildingController <<Controller>>
+participant buildingService <<Service>>
+participant buildingMap <<Mapper>>
+participant buildingDTO <<DTO>>
+participant building <<Entity>>
+participant buildingRepository <<Repository>>
+database driverDB
+
+
+x -> buildingRoute: 1. POST /api/building/createbuilding  params: codigo,name,description,width,length (json)
+activate buildingRoute
+buildingRoute -> buildingController: 2. Handles the request, call buildingController.createbuilding(req, res, next)
+activate buildingController
+buildingController -> buildingService: 3. createbuilding(Request, Response, NextFunction)
+activate buildingService
+buildingService -> buildingRepository: 4. findByBuildingCode(IbuildingDTO.codigo)
+activate buildingRepository
+buildingRepository -> driverDB: 5. findOne()
+activate driverDB
+deactivate driverDB
+buildingRepository --> buildingService: 5. return null
+deactivate buildingRepository
+
+buildingService -> building: 6. create()
+activate building
+building --> buildingService: 6. return building
+deactivate building
+
+buildingService -> buildingRepository: 7. save(building)
+activate buildingRepository
+buildingRepository -> driverDB: 8. save(building)
+activate driverDB
+deactivate driverDB
+buildingRepository --> buildingService: 8. return building
+deactivate buildingRepository
+
+buildingService -> buildingMap: 9. toDTO(building)
+activate buildingMap
+buildingMap --> building: 10. codigo()
+activate building
+deactivate building
+buildingMap --> building: 10. name()
+activate building
+deactivate building
+buildingMap --> building: 10. description()
+activate building
+deactivate building
+buildingMap --> building: 10. width()
+activate building
+deactivate building
+buildingMap --> building: 10. length()
+activate building
+deactivate building
+buildingMap --> buildingService: 11. return buildingDTO
+deactivate buildingMap
+
+buildingService --> buildingController: 12. return buildingDTO
+deactivate buildingService
+
+buildingController --> buildingRoute: 12. return response status and json
+deactivate buildingController
+buildingRoute --> x: 2. response status and json
+deactivate buildingRoute

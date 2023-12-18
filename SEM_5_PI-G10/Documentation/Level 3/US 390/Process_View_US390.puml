@@ -1,0 +1,43 @@
+boundary x 
+participant robotRoute
+participant robotController <<Controller>>
+participant robotTypeService <<Service>>
+participant robotTypeRepository <<Repository>>
+participant robotService <<Service>>
+participant robotRepository <<Repository>>
+database driverDB
+
+
+x -> robotRoute: POST /api/robot/getRobotsByTask
+activate robotRoute
+robotRoute -> robotController: handles the request, calls controller
+activate robotController
+robotController -> robotTypeService: send request to service
+activate robotTypeService
+
+robotTypeService -> robotTypeRepository: get robotTypes with taskCode sent
+activate robotTypeRepository
+robotTypeRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+robotTypeRepository --> robotTypeService: response
+deactivate robotTypeRepository
+robotTypeService -> robotController: return response
+deactivate robotTypeService
+
+robotController -> robotService: send request to service
+activate robotService
+robotService -> robotRepository: get robots with robotTypes sent 
+activate robotRepository
+robotRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+robotRepository --> robotService: response
+deactivate robotRepository
+robotService -> robotController: return response
+deactivate robotService
+robotController -> robotRoute: return response status and json with respective robots
+
+deactivate robotController
+robotRoute --> x: 2. response status and json
+deactivate robotRoute

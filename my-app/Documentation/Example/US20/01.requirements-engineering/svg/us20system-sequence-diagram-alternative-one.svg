@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="375px" preserveAspectRatio="none" style="width:681px;height:375px;background:#FFFFFF;" version="1.1" viewBox="0 0 681 375" width="681px" zoomAndPan="magnify"><defs/><g><rect fill="none" height="27.6094" id="_title" style="stroke:none;stroke-width:1.0;" width="286" x="196.75" y="10"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="276" x="201.75" y="29.5332">System Sequence Diagram (SSD) - US20</text><rect fill="#FFFFFF" height="143.7578" style="stroke:#181818;stroke-width:1.0;" width="10" x="54.5" y="131.2188"/><rect fill="#FFFFFF" height="121.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="638.5" y="153.5703"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="59" x2="59" y1="121.2188" y2="292.9766"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="643.5" x2="643.5" y1="121.2188" y2="292.9766"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="5" y="118.1426">Potencial Utente</text><ellipse cx="59.5" cy="52.1094" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M59.5,60.1094 L59.5,87.1094 M46.5,68.1094 L72.5,68.1094 M59.5,87.1094 L46.5,102.1094 M59.5,87.1094 L72.5,102.1094 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="5" y="306.5098">Potencial Utente</text><ellipse cx="59.5" cy="318.0859" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M59.5,326.0859 L59.5,353.0859 M46.5,334.0859 L72.5,334.0859 M59.5,353.0859 L46.5,368.0859 M59.5,353.0859 L72.5,368.0859 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="611.5" y="88.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="618.5" y="110.1426">:System</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="611.5" y="291.9766"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="618.5" y="313.5098">:System</text><rect fill="#FFFFFF" height="143.7578" style="stroke:#181818;stroke-width:1.0;" width="10" x="54.5" y="131.2188"/><rect fill="#FFFFFF" height="121.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="638.5" y="153.5703"/><polygon fill="#181818" points="626.5,149.5703,636.5,153.5703,626.5,157.5703,630.5,153.5703" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="64.5" x2="632.5" y1="153.5703" y2="153.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="71.5" y="148.7139">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="224" x="82.5" y="148.7139">Inicia processo de registo como utente</text><polygon fill="#181818" points="75.5,179.9219,65.5,183.9219,75.5,187.9219,71.5,183.9219" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="69.5" x2="637.5" y1="183.9219" y2="183.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="81.5" y="179.0654">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="539" x="92.5" y="179.0654">Solicita informações necessárias para o registo(nome, email, telefone e numero contribuinte )</text><polygon fill="#181818" points="626.5,210.2734,636.5,214.2734,626.5,218.2734,630.5,214.2734" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="64.5" x2="632.5" y1="214.2734" y2="214.2734"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="71.5" y="209.417">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="213" x="82.5" y="209.417">Fornece as informações necessárias</text><polygon fill="#181818" points="75.5,240.625,65.5,244.625,75.5,248.625,71.5,244.625" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="69.5" x2="637.5" y1="244.625" y2="244.625"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="81.5" y="239.7686">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="191" x="92.5" y="239.7686">Valida as informações fornecidas</text><polygon fill="#181818" points="70.5,270.9766,60.5,274.9766,70.5,278.9766,66.5,274.9766" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="64.5" x2="642.5" y1="274.9766" y2="274.9766"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="76.5" y="270.1201">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="179" x="87.5" y="270.1201">Conclui o registo com sucesso</text><!--MD5=[f00d169941c663d33fdf892b319b404b]
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US20
+
+autonumber
+
+actor "Potencial Utente" as User
+participant ":System" as System
+
+activate User
+
+User -> System : Inicia processo de registo como utente
+activate System
+
+System - -> User : Solicita informações necessárias para o registo(nome, email, telefone e numero contribuinte )
+
+User -> System : Fornece as informações necessárias
+
+System - -> User : Valida as informações fornecidas
+
+System - -> User : Conclui o registo com sucesso
+
+deactivate System
+deactivate User
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 18:01:30 BST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

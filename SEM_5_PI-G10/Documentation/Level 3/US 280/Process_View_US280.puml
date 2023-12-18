@@ -1,0 +1,58 @@
+@startuml V3_Processos_US280
+boundary x 
+participant elevatorRoute
+participant elevatorController <<Controller>>
+participant elevatorService <<Service>>
+participant elevatorMap <<Mapper>>
+participant elevatorDTO <<DTO>>
+participant elevator <<Entity>>
+participant elevatorRepository <<Repository>>
+database driverDB
+
+
+x -> elevatorRoute: 1. PATCH /api/elevator/updateElevator   params: BuildingCode,ElevatorCode,FloorsAttended,ElevatorType,NumSerie,Description (json)
+activate elevatorRoute
+elevatorRoute -> elevatorController: 2. Handles the request, call elevatorController.updateElevator
+activate elevatorController
+elevatorController -> elevatorService: 3. updateElevator(IElevatorDTO)
+
+activate elevatorService
+elevatorService -> elevatorRepository: 4. replaceByBuildingCode(elevatorDTO)
+activate elevatorRepository
+elevatorRepository -> driverDB: 5.findOneAndUpdate(elevatorDTO)
+activate driverDB
+driverDB --> elevatorRepository: 6. elevator
+deactivate driverDB
+elevatorRepository --> elevatorService: 7. return elevator
+deactivate elevatorRepository
+
+elevatorService -> elevatorMap: 9. toDTO(elevator)
+activate elevatorMap
+elevatorMap --> elevator: 10. Buildingcode()
+activate elevator
+deactivate elevator
+elevatorMap --> elevator: 11. ElevatorCode()
+activate elevator
+deactivate elevator
+elevatorMap --> elevator: 12. FloorsAttended()
+activate elevator
+deactivate elevator
+elevatorMap --> elevator: 13. ElevatorType()
+activate elevator
+deactivate elevator
+elevatorMap --> elevator: 14. NumSerie()
+activate elevator
+deactivate elevator
+elevatorMap --> elevator: 15. Description()
+activate elevator
+deactivate elevator
+elevatorMap --> elevatorService: 16. return elevatorDTO
+deactivate elevatorMap
+
+elevatorService --> elevatorController: 17. return elevatorDTO
+deactivate elevatorService
+
+elevatorController --> elevatorRoute: 18. return response status and json
+deactivate elevatorController
+elevatorRoute --> x: 19. response status and json
+deactivate elevatorRoute

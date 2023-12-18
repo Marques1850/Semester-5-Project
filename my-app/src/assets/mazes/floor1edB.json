@@ -1,0 +1,489 @@
+{
+  "maze": {
+    "size": {
+      "width": 23,
+      "depth": 11
+    },
+    "map": [
+      [
+        3,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        3,
+        2,
+        2,
+        2,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        3,
+        2,
+        2,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        3,
+        0,
+        2,
+        2,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        2,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0
+      ]
+    ],
+    "exits": [
+      [
+        2,
+        -1
+      ],
+      [
+        5,
+        8
+      ]
+    ],
+    "elevators": [
+      [
+        8,
+        22
+      ]
+    ],
+    "exitLocation": [
+      [
+        10,
+        23
+      ],
+      [
+        11,
+        22
+      ],
+      [
+        6,
+        0
+      ]
+    ],
+    "exitFloor": [
+      "floor2edC",
+      "floor2edD",
+      "floor1edA"
+    ],
+    "rooms": [
+      {
+        "nome": "B202",
+        "x": 4,
+        "y": 13
+      },
+      {
+        "nome": "B203",
+        "x": 7,
+        "y": 7
+      },
+      {
+        "nome": "B205",
+        "x": 7,
+        "y": 19
+      },
+      {
+        "nome": "B207",
+        "x": 4,
+        "y": 20
+      }
+    ],
+    "_id": "6579b04b7214b6553a8e16c9"
+  },
+  "ground": {
+    "size": {
+      "width": 23,
+      "height": 0.0625,
+      "depth": 11
+    },
+    "segments": {
+      "width": 1,
+      "height": 1,
+      "depth": 1
+    },
+    "primaryColor": "0xffffff",
+    "maps": {
+      "color": {
+        "url": "./../../assets/textures/ground/textures/laminate_floor_03_diff_4k.jpg"
+      },
+      "ao": {
+        "url": "./../../assets/textures/ground_0003_2k_372HqZ/ground_0003_ao_2k.jpg",
+        "intensity": 0
+      },
+      "displacement": {
+        "url": "",
+        "scale": 1,
+        "bias": 0
+      },
+      "normal": {
+        "url": "./../../assets/textures/ground/textures/laminate_floor_03_disp_4k.png",
+        "type": 0,
+        "scale": {
+          "x": 2,
+          "y": 2
+        }
+      },
+      "bump": {
+        "url": "",
+        "scale": 1
+      },
+      "roughness": {
+        "url": "./../../assets/textures/ground_0003_2k_372HqZ/ground_0003_roughness_2k.jpg",
+        "rough": 0
+      }
+    },
+    "wrapS": 1,
+    "wrapT": 1,
+    "repeat": {
+      "u": 4,
+      "v": 4
+    },
+    "magFilter": 1,
+    "minFilter": 5,
+    "secondaryColor": "0x6b554b",
+    "_id": "6579b04b7214b6553a8e16ca"
+  },
+  "wall": {
+    "segments": {
+      "width": 1,
+      "height": 1
+    },
+    "primaryColor": "0xffffff",
+    "maps": {
+      "color": {
+        "url": "./../../assets/textures/wall/textures/pavement_03_diff_4k.jpg"
+      },
+      "ao": {
+        "url": "./../../assets/textures/wall/textures/plastered_wall_diff_4k.jpg",
+        "intensity": 0
+      },
+      "displacement": {
+        "url": "",
+        "scale": 1,
+        "bias": 0
+      },
+      "normal": {
+        "url": "./../../assets/textures/wall/textures/pavement_03_disp_4k.png",
+        "type": 0,
+        "scale": {
+          "x": 2,
+          "y": 2
+        }
+      },
+      "bump": {
+        "url": "",
+        "scale": 1
+      },
+      "roughness": {
+        "url": "./../../assets/textures/wall/textures/plastered_wall_disp_4k.png",
+        "rough": 1
+      }
+    },
+    "wrapS": 1,
+    "wrapT": 0,
+    "repeat": {
+      "u": 2,
+      "v": 1
+    },
+    "magFilter": 1,
+    "minFilter": 5,
+    "secondaryColor": "0x6b554b",
+    "_id": "6579b04b7214b6553a8e16cb"
+  },
+  "player": {
+    "initialPosition": [
+      5,
+      1
+    ],
+    "initialDirection": 90,
+    "_id": "6579b04b7214b6553a8e16cc"
+  },
+  "_id": "6579b04b7214b6553a8e16c8"
+}

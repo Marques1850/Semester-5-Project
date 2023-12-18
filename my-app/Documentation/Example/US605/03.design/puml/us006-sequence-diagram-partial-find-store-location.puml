@@ -1,0 +1,76 @@
+@startuml
+skinparam monochrome true
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+autonumber
+
+participant ":SpecifyLocationController" as CTRL
+participant ":Repositories" as RP
+participant "repositories\n:Repositories" as repositories
+participant "agencyRepository\n:AgencyRepository" as AgencyRepository
+
+autonumber 15
+group Find Stores Location
+loop until find stores location
+alt successful case
+-> CTRL : findStoresLocation(stateAbbreviation)
+autonumber 15.1
+            activate CTRL
+
+                        CTRL -> RP: getInstance()
+                    activate RP
+
+                        RP --> CTRL: repositories
+                    deactivate RP
+
+                        CTRL -> repositories: getLocationRepository()
+                    activate repositories
+
+                        repositories -> CTRL: LocationRepository
+                    deactivate repositories
+
+                    CTRL -> AgencyRepository: findStoresLocation(stateAbbreviation)
+                activate AgencyRepository
+
+                    AgencyRepository --> CTRL: location
+                deactivate AgencyRepository
+
+                <-- CTRL : location
+                deactivate CTRL
+    else unsuccessful case
+    autonumber 15
+
+
+                -> CTRL : findStoresLocation(stateAbbreviation)
+                activate CTRL
+autonumber 15.1
+                            CTRL -> RP: getInstance()
+                        activate RP
+
+                            RP --> CTRL: repositories
+                        deactivate RP
+
+                            CTRL -> repositories: getLocationRepository()
+                        activate repositories
+
+                            repositories -> CTRL: LocationRepository
+                        deactivate repositories
+
+                        CTRL -> AgencyRepository: findStoresLocation(stateAbbreviation)
+                    activate AgencyRepository
+
+                        AgencyRepository --> CTRL: couldn't find location with that State Abbreviation
+                    deactivate AgencyRepository
+
+                    autonumber 8
+
+                    <-- CTRL: asks to submit new data
+                deactivate CTRL
+    end
+
+    end
+
+    end
+
+@enduml

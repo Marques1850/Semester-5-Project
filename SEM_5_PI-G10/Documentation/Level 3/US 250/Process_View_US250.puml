@@ -1,0 +1,95 @@
+boundary x 
+participant passageRoute
+participant passageController <<Controller>>
+participant passageService <<Service>>
+participant passageMap <<Mapper>>
+participant passageDTO <<DTO>>
+participant passage <<Entity>>
+participant buildingRepository <<Repository>>
+participant floorRepository <<Repository>>
+participant passageRepository <<Repository>>
+database driverDB
+
+
+x -> passageRoute: PUT /api/passage/updatePassage 
+activate passageRoute
+passageRoute -> passageController: handles the request, calls controller
+activate passageController
+passageController -> passageService: send request to service
+
+
+activate passageService
+passageService -> buildingRepository: check if buildings exist
+activate buildingRepository
+buildingRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+buildingRepository --> passageService: response
+deactivate buildingRepository
+
+
+passageService -> buildingRepository: check if building's are different
+activate buildingRepository
+buildingRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+buildingRepository --> passageService: response
+deactivate buildingRepository
+
+
+passageService -> floorRepository: check if floors exist
+activate floorRepository
+floorRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+floorRepository --> passageService: response
+deactivate floorRepository
+
+
+passageService -> floorRepository: check if floor's belong to distinct buildings
+activate floorRepository
+floorRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+floorRepository --> passageService: response
+deactivate floorRepository
+
+
+passageService -> passageRepository: check if passage exists
+activate passageRepository
+passageRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+passageRepository --> passageService: response
+deactivate passageRepository
+
+passageService -> passage: update
+activate passage
+passage --> passageService: return passage
+deactivate passage
+
+passageService -> passageRepository: save
+activate passageRepository
+passageRepository -> driverDB: save
+activate driverDB
+deactivate driverDB
+passageRepository --> passageService: return passage
+deactivate passageRepository
+
+
+passageService -> passageMap: convert data
+activate passageMap
+passageMap --> passage: uses data
+activate passage
+deactivate passage
+
+passageMap --> passageService: return converted data
+deactivate passageMap
+
+passageService --> passageController: return converted data
+deactivate passageService
+
+passageController --> passageRoute: return response status and json
+deactivate passageController
+passageRoute --> x: 2. response status and json
+deactivate passageRoute

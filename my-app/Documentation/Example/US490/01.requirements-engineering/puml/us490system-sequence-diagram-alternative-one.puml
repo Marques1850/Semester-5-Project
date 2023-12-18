@@ -1,0 +1,56 @@
+@startuml
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title System Sequence Diagram (SSD) - US490
+
+autonumber
+
+actor "Gestor de Tarefas" as Admin
+participant ":System" as System
+
+activate Admin
+
+Admin -> System : Pede a pesquisa de requisições de tarefas
+activate System
+
+System --> Admin : Apresenta opções de pesquisa (por estado, tipo de dispositivo, utente)
+deactivate System
+
+Admin -> System : Seleciona opção de pesquisa por estado
+activate System
+
+System --> Admin : Solicita estado da tarefa
+deactivate System
+
+Admin -> System : Informa estado da tarefa
+activate System
+
+System --> Admin : Apresenta resultados da pesquisa por estado
+deactivate System
+
+Admin -> System : Seleciona opção de pesquisa por tipo de dispositivo
+activate System
+
+System --> Admin : Solicita tipo de dispositivo
+deactivate System
+
+Admin -> System : Informa tipo de dispositivo
+activate System
+
+System --> Admin : Apresenta resultados da pesquisa por tipo de dispositivo
+deactivate System
+
+Admin -> System : Seleciona opção de pesquisa por utente
+activate System
+
+System --> Admin : Solicita identificação do utente
+deactivate System
+
+Admin -> System : Informa identificação do utente
+activate System
+
+System --> Admin : Apresenta resultados da pesquisa por utente
+deactivate System
+
+@enduml

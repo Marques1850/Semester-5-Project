@@ -1,0 +1,8 @@
+@startuml
+title RobotType Use Case Diagram
+
+actor Fleet Manager as FM
+usecase (CreateRobotType) as CRT
+
+FM --> CRT
+@enduml

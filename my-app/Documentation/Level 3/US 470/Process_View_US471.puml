@@ -1,0 +1,24 @@
+actor TaskManager as x 
+participant HTML
+participant Component 
+participant Service 
+participant MGT 
+
+activate x
+x -> HTML: option to create a robot type
+activate HTML
+HTML -> Component: triggers function to create a robot type
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGT: POST /api/robotType/createRobotType
+activate MGT
+MGT --> Service: response status and json
+deactivate MGT
+Service --> Component: returns the robot type created
+deactivate Service
+Component --> HTML: returns the robot type created
+deactivate Component
+HTML --> x: displays the robot type created
+deactivate HTML
+deactivate x

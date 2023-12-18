@@ -1,0 +1,73 @@
+boundary x 
+participant Route
+participant Controller 
+participant Service 
+participant Mapper 
+participant DTO 
+participant robot 
+participant robotRepository 
+participant robotTypeRepository 
+database driverDB
+
+
+x -> Route: POST /api/robot/createRobot
+activate Route
+Route -> Controller: handles the request, calls controller
+activate Controller
+Controller -> Service: send request to service
+
+
+Service -> robotRepository: check if already exists
+activate robotRepository
+robotRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+robotRepository --> Service: response
+deactivate robotRepository
+
+Service -> robotTypeRepository: checks if type exists
+activate robotTypeRepository
+robotTypeRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+robotTypeRepository --> Service: response
+deactivate robotTypeRepository
+
+Service -> robotRepository: checks serial number
+activate robotRepository
+robotRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+robotRepository --> Service: response
+deactivate robotRepository
+
+
+Service -> robot: create
+activate robot
+robot --> Service: return robot
+deactivate robot
+
+Service -> robotRepository: save robot
+activate robotRepository
+robotRepository -> driverDB: save
+activate driverDB
+deactivate driverDB
+robotRepository --> Service: return robot
+deactivate robotRepository
+
+Service -> Mapper: convert data
+activate Mapper
+Mapper --> robot: uses data
+activate robot
+deactivate robot
+
+Mapper --> Service: return converted data
+deactivate Mapper
+
+Service --> Controller: return converted data
+deactivate Service
+
+Controller --> Route: response status and json
+deactivate Controller
+Route --> x: response status and json
+deactivate Route

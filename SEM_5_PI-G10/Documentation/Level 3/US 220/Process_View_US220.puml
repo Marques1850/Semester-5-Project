@@ -1,0 +1,54 @@
+boundary x 
+participant passageRoute
+participant passageController <<Controller>>
+participant passageService <<Service>>
+participant floorMap <<Mapper>>
+participant floor <<Entity>>
+participant floorRepository <<Repository>>
+participant passageRepository <<Repository>>
+database driverDB
+
+
+x -> passageRoute: GET /api/passage/getFloorsWithPassage 
+activate passageRoute
+passageRoute -> passageController: handles the request, calls controller
+activate passageController
+passageController -> passageService: send request to service
+
+activate passageService
+
+
+passageService -> passageRepository: check if any passages exist
+activate passageRepository
+passageRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+passageRepository --> passageService: return passages
+deactivate passageRepository
+
+
+passageService -> floorRepository: get floors connected through passages
+activate floorRepository
+floorRepository -> driverDB: find
+activate driverDB
+deactivate driverDB
+floorRepository --> passageService: return floors
+deactivate floorRepository
+
+
+passageService -> floorMap: convert data
+activate floorMap
+floorMap --> floor: uses data
+activate floor
+deactivate floor
+
+floorMap --> passageService: return converted data
+deactivate floorMap
+
+passageService --> passageController: return converted data
+deactivate passageService
+
+passageController --> passageRoute: return response status and json
+deactivate passageController
+passageRoute --> x: 2. response status and json
+deactivate passageRoute

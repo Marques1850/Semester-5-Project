@@ -1,0 +1,24 @@
+actor Admin as x 
+participant HTML
+participant Component 
+participant Service 
+participant MGU 
+
+activate x
+x -> HTML: option to create user
+activate HTML
+HTML -> Component: triggers function to create user
+activate Component
+Component -> Service: calls method to manage the request
+activate Service
+Service -> MGU: POST /api/auth/createUser
+activate MGU
+MGU --> Service: response status and json
+deactivate MGU
+Service --> Component: returns user data
+deactivate Service
+Component --> HTML: returns user data
+deactivate Component
+HTML --> x: returns user data
+deactivate HTML
+deactivate x
